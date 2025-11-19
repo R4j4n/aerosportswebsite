@@ -164,13 +164,13 @@
   align-items: center;
   justify-content: center;
   z-index: 99;
-  filter: drop-shadow(0 2px 8px rgba(240, 12, 116, 0.3));
+  filter: drop-shadow(0 2px 8px rgba(255, 17, 82, 0.3));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .aero_main_logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 4px 12px rgba(240, 12, 116, 0.5));
+  filter: drop-shadow(0 4px 12px rgba(255, 17, 82, 0.5));
 }
 
 .aero_main_logo img {
@@ -200,7 +200,7 @@ header.navbar-hidden {
 }
 
 .aero_changelocation_height {
-  box-shadow: 0 4px 20px rgba(240, 12, 116, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 17, 82, 0.2);
 }
 
 .aero-menu-location {
@@ -222,8 +222,8 @@ header.navbar-hidden {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 2px solid rgba(240, 12, 116, 0.5);
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.2);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.2);
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -245,9 +245,9 @@ header.navbar-hidden {
 }
 
 .aero-d-changelocation:hover {
-  background: rgba(240, 12, 116, 0.1);
+  background: rgba(255, 17, 82, 0.1);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.4), 0 0 30px rgba(202, 255, 26, 0.2);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.4), 0 0 30px rgba(202, 255, 26, 0.2);
   transform: translateX(3px);
 }
 
@@ -279,8 +279,8 @@ header.navbar-hidden {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 2px solid rgba(240, 12, 116, 0.5);
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3);
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -301,9 +301,9 @@ header.navbar-hidden {
 }
 
 .aero-faq:hover {
-  background: rgba(240, 12, 116, 0.1);
+  background: rgba(255, 17, 82, 0.1);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
   transform: translateX(3px);
 }
 
@@ -344,7 +344,7 @@ header.navbar-hidden {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #f00c74, #caff1a);
+  background: linear-gradient(90deg, #ff1152, #caff1a);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -365,7 +365,7 @@ header.navbar-hidden {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.9) 0%, rgba(240, 12, 116, 0.7) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.9) 0%, rgba(255, 17, 82, 0.7) 100%);
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   color: #fff;
   padding: 0.75em 2em;
@@ -373,8 +373,8 @@ header.navbar-hidden {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 2px solid rgba(240, 12, 116, 0.6);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.4);
+  border: 2px solid rgba(255, 17, 82, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.4);
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -399,9 +399,9 @@ header.navbar-hidden {
 
 .aero-btn-book:hover,
 .sigma_btn-custom:hover {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 1) 0%, rgba(255, 26, 140, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 1) 0%, rgba(255, 26, 140, 0.9) 100%);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 8px 25px rgba(240, 12, 116, 0.6), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 17, 82, 0.6), 0 0 30px rgba(202, 255, 26, 0.3);
   transform: translateX(3px);
 }
 
@@ -428,8 +428,8 @@ header.navbar-hidden {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 2px solid rgba(240, 12, 116, 0.5);
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3);
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -451,9 +451,9 @@ header.navbar-hidden {
 }
 
 .aero-header-contactus-btn:hover {
-  background: rgba(240, 12, 116, 0.1);
+  background: rgba(255, 17, 82, 0.1);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
   transform: translateX(3px);
 }
 
@@ -476,10 +476,24 @@ header.navbar-hidden {
 /* ========================================
    HERO SECTION
    ======================================== */
+.aero_home_video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .aero_home_video-container video {
-  height: 500px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   filter: brightness(0.8);
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .location-overlay-box {
@@ -487,7 +501,7 @@ header.navbar-hidden {
   bottom: 2em;
   left: 2em;
   right: 2em;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.15) 0%, rgba(202, 255, 26, 0.12) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.15) 0%, rgba(202, 255, 26, 0.12) 100%);
   color: white;
   padding: 2em 3em;
   border-radius: 0;
@@ -495,7 +509,7 @@ header.navbar-hidden {
   z-index: 10;
   max-width: 550px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(240, 12, 116, 0.4);
+  border: 2px solid rgba(255, 17, 82, 0.4);
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
   animation: fadeInUp 1s ease-out;
   backdrop-filter: blur(10px);
@@ -504,9 +518,9 @@ header.navbar-hidden {
 }
 
 .location-overlay-box:hover {
-  box-shadow: 0 15px 50px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 15px 50px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
   border-color: rgba(202, 255, 26, 0.8);
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.2) 0%, rgba(202, 255, 26, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.2) 0%, rgba(202, 255, 26, 0.15) 100%);
 }
 
 .location-overlay-box::before {
@@ -540,7 +554,7 @@ header.navbar-hidden {
 .location-overlay-box h2 {
   font-size: 0.7rem;
   margin-bottom: 8px;
-  color: #f00c74;
+  color: #ff1152;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 700;
@@ -648,7 +662,7 @@ header.navbar-hidden {
 .aero-home-h1heading {
   text-align: center;
   margin-top: 50px;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -668,7 +682,7 @@ header.navbar-hidden {
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -679,8 +693,8 @@ header.navbar-hidden {
 .promotions__icon {
   width: 40px;
   height: 40px;
-  stroke: #f00c74;
-  filter: drop-shadow(0 2px 4px rgba(240, 12, 116, 0.3));
+  stroke: #ff1152;
+  filter: drop-shadow(0 2px 4px rgba(255, 17, 82, 0.3));
 }
 
 .aero-btn-article-section {
@@ -707,7 +721,7 @@ header.navbar-hidden {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(240, 12, 116, 0.1) 0%, transparent 50%),
+  background: radial-gradient(circle at 30% 50%, rgba(255, 17, 82, 0.1) 0%, transparent 50%),
               radial-gradient(circle at 70% 50%, rgba(202, 255, 26, 0.08) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
@@ -832,7 +846,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   color: var(--white-color);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 -10px 30px rgba(240, 12, 116, 0.2);
+  box-shadow: 0 -10px 30px rgba(255, 17, 82, 0.2);
 }
 
 .aero_home-actionbtn-bg::before {
@@ -842,7 +856,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #f00c74, #caff1a, #f00c74);
+  background: linear-gradient(90deg, #ff1152, #caff1a, #ff1152);
   background-size: 200% 100%;
   animation: shine 3s linear infinite;
 }
@@ -856,7 +870,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .aero_home-actionbtn h2 {
   font-size: 1.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -961,7 +975,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   color: var(--black-color);
   font-size: 2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1030,7 +1044,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 
 .aero_home-playsection-2 article:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.3);
+  box-shadow: 0 20px 50px rgba(255, 17, 82, 0.3);
 }
 
 .aero_home-playsection-2 article img,
@@ -1091,10 +1105,70 @@ footer .aero_home-headerimg-wrapper > img:hover {
    ARTICLE SECTION
    ======================================== */
 .aero_home_article_section {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   padding: 3em 0 2em;
   position: relative;
   overflow: hidden;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll animation on sections */
+.aero_home_article_section .section {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.aero_home_article_section .section:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.aero_home_article_section .section:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.aero_home_article_section .section:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.aero_home_article_section .section:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.aero_home_article_section .section:nth-child(5) {
+  animation-delay: 0.9s;
 }
 
 .aero_home_article_section::before {
@@ -1104,8 +1178,8 @@ footer .aero_home-headerimg-wrapper > img:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(240, 12, 116, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(202, 255, 26, 0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 30%, rgba(255, 17, 82, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(57, 255, 20, 0.12) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -1115,7 +1189,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   transition: all 0.4s ease;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid rgba(240, 12, 116, 0.2);
+  border: 2px solid rgba(255, 17, 82, 0.2);
   position: relative;
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
@@ -1123,8 +1197,8 @@ footer .aero_home-headerimg-wrapper > img:hover {
 
 .aero_home_article_card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.5);
-  border-color: rgba(240, 12, 116, 0.6);
+  box-shadow: 0 20px 50px rgba(255, 17, 82, 0.5);
+  border-color: rgba(255, 17, 82, 0.6);
 }
 
 .aero_home_article_card img {
@@ -1157,7 +1231,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   min-width: 70px;
   width: 70px;
   height: 60px;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.4) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.4) 0%, rgba(202, 255, 26, 0.3) 100%);
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
   position: absolute;
   top: -40px;
@@ -1167,8 +1241,8 @@ footer .aero_home-headerimg-wrapper > img:hover {
   color: #fff;
   text-align: center;
   align-content: center;
-  border: 3px solid rgba(240, 12, 116, 0.6);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.4);
+  border: 3px solid rgba(255, 17, 82, 0.6);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.4);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   overflow: hidden;
@@ -1189,9 +1263,9 @@ footer .aero_home-headerimg-wrapper > img:hover {
 }
 
 .aero_home_article_card:hover .aero_home_article_desc div {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.6) 0%, rgba(202, 255, 26, 0.5) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.6) 0%, rgba(202, 255, 26, 0.5) 100%);
   transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.6), 0 0 40px rgba(202, 255, 26, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.6), 0 0 40px rgba(202, 255, 26, 0.4);
   border-color: rgba(202, 255, 26, 0.9);
 }
 
@@ -1224,10 +1298,10 @@ footer .aero_home-headerimg-wrapper > img:hover {
   text-align: center;
   color: var(--black-color);
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.2);
   border: 3px solid transparent;
   background-image: linear-gradient(#fff, #fff),
-                    linear-gradient(135deg, #f00c74, #caff1a);
+                    linear-gradient(135deg, #ff1152, #caff1a);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border-radius: 30px;
@@ -1239,13 +1313,13 @@ footer .aero_home-headerimg-wrapper > img:hover {
 
 .aero_home_feature_section-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.4);
+  box-shadow: 0 20px 50px rgba(255, 17, 82, 0.4);
 }
 
 .aero_home_feature_section-card div:first-child {
   font-size: 3rem;
   font-weight: 900;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1274,7 +1348,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 1em;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1330,7 +1404,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 30px;
-  border: 2.5px solid rgba(240, 12, 116, 0.5);
+  border: 2.5px solid rgba(255, 17, 82, 0.5);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -1346,7 +1420,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.15) 0%, rgba(202, 255, 26, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.15) 0%, rgba(202, 255, 26, 0.08) 100%);
   opacity: 0;
   transition: opacity 0.5s ease;
   z-index: 0;
@@ -1362,7 +1436,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.8), rgba(202, 255, 26, 0.6));
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.8), rgba(202, 255, 26, 0.6));
   border-radius: 30px;
   opacity: 0;
   z-index: -1;
@@ -1377,11 +1451,11 @@ footer .aero_home-headerimg-wrapper > img:hover {
 /* Card hover effects */
 .aero_home_BPJ_wrapper > div:hover {
   transform: translateY(-20px) scale(1.03);
-  border-color: rgba(240, 12, 116, 0.9);
+  border-color: rgba(255, 17, 82, 0.9);
   box-shadow:
-    0 30px 60px rgba(240, 12, 116, 0.5),
+    0 30px 60px rgba(255, 17, 82, 0.5),
     0 0 100px rgba(202, 255, 26, 0.3),
-    inset 0 0 60px rgba(240, 12, 116, 0.1);
+    inset 0 0 60px rgba(255, 17, 82, 0.1);
   background: rgba(0, 0, 0, 0.85);
 }
 
@@ -1395,15 +1469,15 @@ footer .aero_home-headerimg-wrapper > img:hover {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.25) 0%, rgba(202, 255, 26, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.25) 0%, rgba(202, 255, 26, 0.15) 100%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.3);
 }
 
 .aero_home_BPJ_wrapper > div:hover a {
   transform: rotate(360deg) scale(1.15);
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.45) 0%, rgba(202, 255, 26, 0.3) 100%);
-  box-shadow: 0 15px 50px rgba(240, 12, 116, 0.6);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.45) 0%, rgba(202, 255, 26, 0.3) 100%);
+  box-shadow: 0 15px 50px rgba(255, 17, 82, 0.6);
 }
 
 /* Icon image styling */
@@ -1411,12 +1485,12 @@ footer .aero_home-headerimg-wrapper > img:hover {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  filter: drop-shadow(0 8px 25px rgba(240, 12, 116, 0.7));
+  filter: drop-shadow(0 8px 25px rgba(255, 17, 82, 0.7));
   transition: all 0.4s ease;
 }
 
 .aero_home_BPJ_wrapper > div:hover img {
-  filter: drop-shadow(0 12px 40px rgba(240, 12, 116, 1));
+  filter: drop-shadow(0 12px 40px rgba(255, 17, 82, 1));
   transform: scale(1.1);
 }
 
@@ -1426,7 +1500,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   z-index: 1;
   font-size: 1.6rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1439,7 +1513,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .aero_home_BPJ_wrapper > div:hover span {
   transform: scale(1.08);
   letter-spacing: 3.5px;
-  text-shadow: 0 0 30px rgba(240, 12, 116, 0.8);
+  text-shadow: 0 0 30px rgba(255, 17, 82, 0.8);
 }
 
 /* ========================================
@@ -1456,7 +1530,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   gap: 1.2rem;
   padding: 2em;
   background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(38, 38, 38, 0.9) 100%);
-  border: 2px solid rgba(240, 12, 116, 0.3);
+  border: 2px solid rgba(255, 17, 82, 0.3);
   border-radius: 20px;
   transition: all 0.4s ease;
   animation: fadeInUp 0.6s ease-out;
@@ -1465,8 +1539,8 @@ footer .aero_home-headerimg-wrapper > img:hover {
 
 .aero_rating_card:hover {
   transform: translateY(-10px);
-  border-color: rgba(240, 12, 116, 0.6);
-  box-shadow: 0 20px 40px rgba(240, 12, 116, 0.3);
+  border-color: rgba(255, 17, 82, 0.6);
+  box-shadow: 0 20px 40px rgba(255, 17, 82, 0.3);
 }
 
 .aero_rating_card h4 {
@@ -1497,7 +1571,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   font-size: 1.1rem;
   font-weight: 500;
   font-style: italic;
-  color: #f00c74;
+  color: #ff1152;
 }
 
 .aero_rating_readmore {
@@ -1510,7 +1584,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   visibility: visible;
   font-weight: 500;
   border-radius: 10px;
-  border: 1px solid rgba(240, 12, 116, 0.3);
+  border: 1px solid rgba(255, 17, 82, 0.3);
 }
 
 .aero_rating_card p:hover span {
@@ -1523,7 +1597,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .aero_footer_section-bg {
   background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
   border-top: 3px solid;
-  border-image: linear-gradient(90deg, #f00c74, #caff1a) 1;
+  border-image: linear-gradient(90deg, #ff1152, #caff1a) 1;
 }
 
 /* Modern Footer Wrapper */
@@ -1548,7 +1622,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 
 .aero_footer_logo:hover {
   transform: scale(1.05) rotate(2deg);
-  filter: drop-shadow(0 10px 20px rgba(240, 12, 116, 0.5));
+  filter: drop-shadow(0 10px 20px rgba(255, 17, 82, 0.5));
 }
 
 .aero_footer_tagline {
@@ -1576,8 +1650,8 @@ footer .aero_home-headerimg-wrapper > img:hover {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.2) 0%, rgba(202, 255, 26, 0.1) 100%);
-  border: 2px solid rgba(240, 12, 116, 0.4);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.2) 0%, rgba(202, 255, 26, 0.1) 100%);
+  border: 2px solid rgba(255, 17, 82, 0.4);
   color: #ffffff;
   transition: all 0.3s ease;
   position: relative;
@@ -1591,7 +1665,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1611,7 +1685,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .aero_footer_social_link:hover {
   transform: translateY(-5px) scale(1.1);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 10px 25px rgba(240, 12, 116, 0.5);
+  box-shadow: 0 10px 25px rgba(255, 17, 82, 0.5);
 }
 
 .aero_footer_social_link:hover svg {
@@ -1638,7 +1712,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 1.2em;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1655,7 +1729,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   left: 0;
   width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, #f00c74, #caff1a);
+  background: linear-gradient(90deg, #ff1152, #caff1a);
   border-radius: 2px;
 }
 
@@ -1701,7 +1775,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .aero_footer_copyright {
   text-align: center;
   padding: 2em 1em;
-  border-top: 1px solid rgba(240, 12, 116, 0.2);
+  border-top: 1px solid rgba(255, 17, 82, 0.2);
   margin-top: 2em;
 }
 
@@ -1728,7 +1802,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
 .figcaption-bg h3 {
   font-size: 1.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1777,7 +1851,7 @@ ul.attractions-grid li:nth-child(8) { animation-delay: 0.8s; }
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.3), 0 0 0 2px rgba(240, 12, 116, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.3), 0 0 0 2px rgba(255, 17, 82, 0.2);
   clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
   height: 100%;
   display: flex;
@@ -1786,7 +1860,7 @@ ul.attractions-grid li:nth-child(8) { animation-delay: 0.8s; }
 
 .attraction-figure:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.5), 0 0 60px rgba(202, 255, 26, 0.4);
+  box-shadow: 0 20px 50px rgba(255, 17, 82, 0.5), 0 0 60px rgba(202, 255, 26, 0.4);
   border-color: rgba(202, 255, 26, 0.8);
 }
 
@@ -1978,7 +2052,7 @@ ul.attractions-grid li:nth-child(8) { animation-delay: 0.8s; }
   }
 
   .aero_home_article_card:hover {
-    box-shadow: 0 25px 60px rgba(240, 12, 116, 0.5);
+    box-shadow: 0 25px 60px rgba(255, 17, 82, 0.5);
   }
 
   .aero_home_article_desc p {
@@ -2154,5 +2228,441 @@ ul.attractions-grid li:nth-child(8) { animation-delay: 0.8s; }
 
   .aero_home_BPJ_wrapper > div:hover span {
     letter-spacing: 2.5px;
+  }
+}
+
+/* ========================================
+   ADDITIONAL STYLES FOR ENHANCED UI
+   ======================================== */
+
+/* Hero Section Enhancements */
+.hero-section-badge {
+  display: inline-block;
+  background: transparent;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  transform: skewX(-20deg);
+}
+
+.hero-section-badge:hover::before {
+  left: 100%;
+}
+
+.hero-section-badge:hover {
+  border-color: rgba(202, 255, 26, 0.8);
+  background: rgba(255, 17, 82, 0.1);
+}
+
+/* ========================================
+   EMBEDDED PAGE STYLES - MOVED FROM page.jsx
+   ======================================== */
+
+/* CSS Variables */
+:root {
+  --primary-color: #ff1152;
+  --secondary-color: #caff1a;
+  --white-color: #fff;
+}
+
+/* Badge Styling */
+.badge {
+  display: inline-block;
+  background: transparent;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: scaleIn 0.6s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  transform: skewX(-20deg);
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  border-color: rgba(202, 255, 26, 0.8);
+  background: rgba(255, 17, 82, 0.1);
+}
+
+.badge span {
+  display: block;
+  color: var(--white-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Gradient Title Styling */
+.gradient-title {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Subtitle Styling */
+.subtitle {
+  color: #e0e0e0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0 0 40px 0;
+  line-height: 1.7;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Stats Container */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Stat Box Styling */
+.stat-box {
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  padding: 20px 25px;
+  box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+  transform: skewX(-20deg);
+}
+
+.stat-box:hover::before {
+  left: 100%;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box.pink {
+  border: 1px solid rgba(255, 17, 82, 0.2);
+}
+
+.stat-box.green {
+  border: 1px solid rgba(202, 255, 26, 0.2);
+}
+
+.stat-box.mixed {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Stat Number Styling */
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.stat-number.pink {
+  color: var(--primary-color);
+}
+
+.stat-number.green {
+  color: var(--secondary-color);
+}
+
+.stat-number.gradient {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Stat Label Styling */
+.stat-label {
+  color: #d0d0d0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Content Card Styling */
+.content-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.content-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.content-card.green-border {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  border: 2px solid rgba(202, 255, 26, 0.3);
+  box-shadow: 0 10px 30px rgba(202, 255, 26, 0.15);
+}
+
+.content-card.green-border:hover {
+  border-color: rgba(202, 255, 26, 0.6);
+  box-shadow: 0 15px 40px rgba(202, 255, 26, 0.25);
+}
+
+.content-card.pink-border {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  border: 2px solid rgba(255, 17, 82, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.15);
+}
+
+.content-card.pink-border:hover {
+  border-color: rgba(255, 17, 82, 0.6);
+  box-shadow: 0 15px 40px rgba(255, 17, 82, 0.25);
+}
+
+/* Content Text Styling */
+.content-text {
+  color: #f5f5f5;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Section Title Styling */
+.section-title {
+  color: var(--white-color);
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 35px 0;
+  text-align: center;
+}
+
+/* Location Title Styling */
+.location-title {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 35px 0;
+  text-align: center;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* Map Container Styling */
+.map-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 10px 40px rgba(255, 17, 82, 0.3);
+  width: 100%;
+  height: 500px;
+  border: 2px solid rgba(255, 17, 82, 0.3);
+  transition: all 0.3s ease;
+}
+
+.map-container iframe:hover {
+  border-color: rgba(202, 255, 26, 0.6);
+  box-shadow: 0 15px 50px rgba(255, 17, 82, 0.4);
+}
+
+/* Location Info Styling */
+.location-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.location-address {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #f5f5f5;
+}
+
+.location-description {
+  margin: 10px 0;
+  color: #d0d0d0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* CTA Buttons Styling */
+.cta-buttons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 220px;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+  position: relative;
+  overflow: hidden;
+  height: 45px;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+  transform: skewX(-20deg);
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button.primary {
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
+  color: #fff;
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3);
+}
+
+.cta-button.primary:hover {
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.4) 0%, rgba(202, 255, 26, 0.25) 100%);
+  border-color: rgba(202, 255, 26, 0.8);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  transform: translateX(3px);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--secondary-color);
+  border: 2px solid rgba(202, 255, 26, 0.5);
+  box-shadow: 0 4px 12px rgba(202, 255, 26, 0.2);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(202, 255, 26, 0.1);
+  border-color: rgba(202, 255, 26, 0.8);
+  box-shadow: 0 6px 20px rgba(202, 255, 26, 0.4);
+  transform: translateX(3px);
+}
+
+/* Highlight Styling */
+strong.highlight {
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-button {
+    min-width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .gradient-title {
+    font-size: 1.8rem;
+  }
+
+  .content-card {
+    padding: 28px;
+  }
+
+  .map-container iframe {
+    height: 400px;
+  }
+
+  .section-title,
+  .location-title {
+    font-size: 1.6rem;
+  }
+
+  .stat-box {
+    padding: 18px 22px;
   }
 }

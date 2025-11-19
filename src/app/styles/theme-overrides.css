@@ -214,7 +214,7 @@ body {
    DECORATIVE ELEMENTS
    ======================================== */
 [data-theme="light"] .aero_attractions_circle {
-  border-color: rgba(240, 12, 116, 0.3);
+  border-color: rgba(255, 17, 82, 0.3);
 }
 
 [data-theme="light"] .aero_attractions_confetti {
@@ -225,12 +225,12 @@ body {
    CONTENT SECTIONS
    ======================================== */
 [data-theme="light"] .aero_home_article_desc div {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.4) 100%);
-  border: 3px solid rgba(240, 12, 116, 0.7);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.5) 0%, rgba(202, 255, 26, 0.4) 100%);
+  border: 3px solid rgba(255, 17, 82, 0.7);
 }
 
 [data-theme="light"] .aero_home_article_card:hover .aero_home_article_desc div {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.7) 0%, rgba(202, 255, 26, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.7) 0%, rgba(202, 255, 26, 0.6) 100%);
 }
 
 /* ========================================

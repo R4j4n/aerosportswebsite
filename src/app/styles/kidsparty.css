@@ -196,10 +196,10 @@
 
 @keyframes badgeShine {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(240, 12, 116, 0.3);
+    box-shadow: 0 0 10px rgba(255, 17, 82, 0.3);
   }
   50% {
-    box-shadow: 0 0 25px rgba(240, 12, 116, 0.8), 0 0 40px rgba(202, 255, 26, 0.4);
+    box-shadow: 0 0 25px rgba(255, 17, 82, 0.8), 0 0 40px rgba(202, 255, 26, 0.4);
   }
 }
 
@@ -225,23 +225,23 @@
   position: absolute;
   width: 10px;
   height: 20px;
-  background: linear-gradient(45deg, #f00c74, #caff1a);
+  background: linear-gradient(45deg, #ff1152, #caff1a);
   animation: confettiFall linear infinite;
   opacity: 0;
 }
 
 .aero_bp_confetti_1 { left: 10%; animation-duration: 15s; animation-delay: 0s; }
-.aero_bp_confetti_2 { left: 30%; animation-duration: 18s; animation-delay: 2s; background: linear-gradient(45deg, #caff1a, #f00c74); }
+.aero_bp_confetti_2 { left: 30%; animation-duration: 18s; animation-delay: 2s; background: linear-gradient(45deg, #caff1a, #ff1152); }
 .aero_bp_confetti_3 { left: 50%; animation-duration: 20s; animation-delay: 4s; }
-.aero_bp_confetti_4 { left: 70%; animation-duration: 16s; animation-delay: 1s; background: linear-gradient(45deg, #ff1a8c, #9ce600); }
+.aero_bp_confetti_4 { left: 70%; animation-duration: 16s; animation-delay: 1s; background: linear-gradient(45deg, #ff4d7d, #9ce600); }
 .aero_bp_confetti_5 { left: 85%; animation-duration: 19s; animation-delay: 3s; }
-.aero_bp_confetti_6 { left: 20%; animation-duration: 17s; animation-delay: 5s; background: linear-gradient(45deg, #caff1a, #ff1a8c); }
+.aero_bp_confetti_6 { left: 20%; animation-duration: 17s; animation-delay: 5s; background: linear-gradient(45deg, #caff1a, #ff4d7d); }
 
 /* Circle Decorations */
 .aero_bp_circle_decoration {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgba(240, 12, 116, 0.2);
+  border: 2px solid rgba(255, 17, 82, 0.2);
   animation: circleFloat 8s ease-in-out infinite;
 }
 
@@ -267,7 +267,7 @@
   height: 200px;
   bottom: 10%;
   left: 15%;
-  border-color: rgba(240, 12, 116, 0.15);
+  border-color: rgba(255, 17, 82, 0.15);
   animation-delay: 4s;
 }
 
@@ -280,9 +280,9 @@
 }
 
 .aero_bp_star_1 { top: 15%; right: 20%; animation-delay: 0s; }
-.aero_bp_star_2 { top: 40%; left: 10%; animation-delay: 1s; color: #f00c74; }
+.aero_bp_star_2 { top: 40%; left: 10%; animation-delay: 1s; color: #ff1152; }
 .aero_bp_star_3 { bottom: 30%; right: 15%; animation-delay: 2s; }
-.aero_bp_star_4 { bottom: 15%; left: 25%; animation-delay: 3s; color: #ff1a8c; }
+.aero_bp_star_4 { bottom: 15%; left: 25%; animation-delay: 3s; color: #ff4d7d; }
 
 /* Animated Title Section */
 .aero_bp_title_wrapper {
@@ -327,7 +327,7 @@
 .aero_bp_gradient_orb_1 {
   top: -100%;
   left: -100%;
-  background: radial-gradient(circle, rgba(240, 12, 116, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 17, 82, 0.08) 0%, transparent 70%);
 }
 
 .aero_bp_gradient_orb_2 {
@@ -356,7 +356,7 @@
 
 .aero_bp_title_badge {
   display: inline-block;
-  background: linear-gradient(45deg, #f00c74, #ff1a8c);
+  background: linear-gradient(45deg, #ff1152, #ff4d7d);
   padding: 2px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -375,7 +375,7 @@
 }
 
 .aero_bp_gradient_title {
-  background: linear-gradient(45deg, #f00c74, #caff1a);
+  background: linear-gradient(45deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -426,13 +426,13 @@
   margin-bottom: 0.5em;
   display: inline-block;
   animation: scaleIn 0.8s ease-out;
-  filter: drop-shadow(0 4px 10px rgba(240, 12, 116, 0.3));
+  filter: drop-shadow(0 4px 10px rgba(255, 17, 82, 0.3));
 }
 
 .aero_bp_section_title {
   font-size: 2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #f00c74, #caff1a);
+  background: linear-gradient(135deg, #ff1152, #caff1a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -452,7 +452,7 @@
 .aero_bp_pricing_table_container {
   margin-bottom: 2em;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-  box-shadow: 0 10px 40px rgba(240, 12, 116, 0.3), 0 0 0 3px rgba(240, 12, 116, 0.1);
+  box-shadow: 0 10px 40px rgba(255, 17, 82, 0.3), 0 0 0 3px rgba(255, 17, 82, 0.1);
   position: relative;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 }
@@ -464,7 +464,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #f00c74 0%, #caff1a 50%, #f00c74 100%);
+  background: linear-gradient(90deg, #ff1152 0%, #caff1a 50%, #ff1152 100%);
   background-size: 200% 100%;
   animation: shine 3s linear infinite;
   z-index: 100;
@@ -477,7 +477,7 @@
 
 .aero_bp_pricing_table_container::-webkit-scrollbar-track {
   background: #1a1a1a;
-  border: 2px solid rgba(240, 12, 116, 0.2);
+  border: 2px solid rgba(255, 17, 82, 0.2);
 }
 
 .aero_bp_pricing_table_container::-webkit-scrollbar-thumb {
@@ -509,8 +509,8 @@
   animation-fill-mode: both;
   text-transform: uppercase;
   position: relative;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.2) 0%, rgba(202, 255, 26, 0.1) 100%);
-  border-right: 2px solid rgba(240, 12, 116, 0.3);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.2) 0%, rgba(202, 255, 26, 0.1) 100%);
+  border-right: 2px solid rgba(255, 17, 82, 0.3);
   border-bottom: 4px solid var(--primary-color);
   color: var(--white-color);
   display: flex;
@@ -520,8 +520,8 @@
 
 .aero_bp_grid_header_feature {
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
-  border-right: 3px solid rgba(240, 12, 116, 0.5);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border-right: 3px solid rgba(255, 17, 82, 0.5);
   padding-left: 24px;
   font-weight: 800;
 }
@@ -534,7 +534,7 @@
 }
 
 .aero_bp_grid_header_package:hover {
-  background: linear-gradient(180deg, rgba(240, 12, 116, 0.25) 0%, rgba(202, 255, 26, 0.15) 100%);
+  background: linear-gradient(180deg, rgba(255, 17, 82, 0.25) 0%, rgba(202, 255, 26, 0.15) 100%);
   transform: translateY(-3px);
 }
 
@@ -548,8 +548,8 @@
   font-size: 0.95rem;
   transition: all 0.3s ease;
   position: relative;
-  border-right: 1px solid rgba(240, 12, 116, 0.1);
-  border-bottom: 2px solid rgba(240, 12, 116, 0.2);
+  border-right: 1px solid rgba(255, 17, 82, 0.1);
+  border-bottom: 2px solid rgba(255, 17, 82, 0.2);
   animation: fadeInUp 0.4s ease-out;
   animation-fill-mode: both;
   display: flex;
@@ -564,7 +564,7 @@
   letter-spacing: 0.5px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
-  border-right: 3px solid rgba(240, 12, 116, 0.3);
+  border-right: 3px solid rgba(255, 17, 82, 0.3);
   padding-left: 24px;
 }
 
@@ -666,14 +666,14 @@
 .aero_bp_text_value {
   display: inline-block;
   padding: 0.5em 1.2em;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   color: #fff;
   font-weight: 700;
   font-size: 0.85rem;
   transition: all 0.3s ease;
-  border: 2px solid rgba(240, 12, 116, 0.5);
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
@@ -698,9 +698,9 @@
 }
 
 .aero_bp_text_value:hover {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
   border-color: rgba(202, 255, 26, 0.8);
 }
 

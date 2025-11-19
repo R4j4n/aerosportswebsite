@@ -21,16 +21,16 @@ const toTelHref = (phone) => {
   return `tel:${e164}`;
 };
   return (
-    <section className="aero_home-headerimg-wrapper">
+    <section className="aero_home-headerimg-wrapper" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', margin: 0, padding: 0, zIndex: 1, overflow: 'hidden' }}>
       {hasVideo ? (
-        <section className="aero_home_video-container">
-          <video autoPlay muted loop width="100%">
+        <section className="aero_home_video-container" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', margin: 0, padding: 0, overflow: 'hidden' }}>
+          <video autoPlay muted loop style={{ width: '100%', height: '100%', display: 'block', margin: 0, padding: 0, objectFit: 'cover' }}>
             <source src={item.video} type="video/mp4" />
           </video>
           <article className="image-content">
-           
+
           </article>
-          <div className="location-overlay-box">
+          {/* <div className="location-overlay-box">
               <h1 className="aero-home-h1heading">{item.title}</h1>
         <p>{item.smalltext}</p>
        <p>
@@ -61,7 +61,7 @@ const toTelHref = (phone) => {
                 </Link>
               </div>
             )}
-      </div>
+      </div> */}
         
         </section>
       ) : (

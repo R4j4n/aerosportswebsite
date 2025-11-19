@@ -44,7 +44,7 @@
 }
 .modal-body button {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   color: #fff;
   padding: 0.75em 2em;
@@ -52,8 +52,8 @@
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border: 2px solid rgba(240, 12, 116, 0.5);
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3);
+  border: 2px solid rgba(255, 17, 82, 0.5);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -76,9 +76,9 @@
 
 .modal-body button:hover,
 .modal-body button:focus {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
   transform: translateX(5px);
   outline: none;
 }
@@ -89,5 +89,5 @@
 
 .modal-body button:active {
   transform: translateX(3px);
-  box-shadow: 0 4px 15px rgba(240, 12, 116, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 17, 82, 0.4);
 }

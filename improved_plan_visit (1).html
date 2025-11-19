@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Plan Your Visit Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: #000;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section (for context) */
+        .hero-section {
+            position: relative;
+            background: #000;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-diagonal {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 150%;
+            background: linear-gradient(135deg, #ff1152 0%, #ff006e 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-left {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 2px solid #39FF14;
+            color: #39FF14;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            color: #ff1152;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle-line {
+            font-size: 64px;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .hero-text-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .hero-text-box p {
+            font-size: 15px;
+            color: #000;
+            line-height: 1.7;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .hero-text-box strong {
+            color: #ff1152;
+            font-weight: bold;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-pink {
+            background: #ff1152;
+            color: #fff;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ff1152;
+            padding: 18px 40px;
+            border: 2px solid #ff1152;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .hero-right {
+            position: relative;
+            z-index: 1;
+        }
+
+        .map-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255,17,82,0.3);
+        }
+
+        .map-card-header {
+            background: #f8f9fa;
+            padding: 25px 30px;
+            border-bottom: 3px solid #ff1152;
+        }
+
+        .map-card-title {
+            font-size: 24px;
+            color: #000;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .map-wrapper {
+            height: 350px;
+            width: 100%;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-card-footer {
+            padding: 25px 30px;
+            background: #fff;
+        }
+
+        .map-address {
+            font-size: 16px;
+            color: #ff1152;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .map-text {
+            font-size: 14px;
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* NEW IMPROVED SECTION */
+        .plan-visit-section {
+            position: relative;
+            background: #000;
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
+
+        /* Continuation of diagonal from above */
+        .plan-diagonal-bg {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(135deg, #ff1152 0%, #ff006e 100%);
+            clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+            z-index: 0;
+        }
+
+        .plan-content-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .plan-header {
+            margin-bottom: 60px;
+            max-width: 800px;
+        }
+
+        .plan-badge {
+            display: inline-block;
+            background: #39FF14;
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .plan-title {
+            font-size: 72px;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .plan-title span {
+            color: #39FF14;
+        }
+
+        .plan-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Why Choose Card */
+        .why-choose-card {
+            background: #fff;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+
+        .why-title {
+            font-size: 36px;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .why-title span {
+            color: #ff1152;
+        }
+
+        .why-divider {
+            width: 60px;
+            height: 4px;
+            background: #ff1152;
+            margin-bottom: 35px;
+        }
+
+        .why-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .why-feature {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff1152, #ff006e);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .feature-content p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        /* Quick Actions Card */
+        .quick-actions-card {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            padding: 40px;
+            border-radius: 25px;
+            border: 2px solid #ff1152;
+            box-shadow: 0 30px 80px rgba(255,17,82,0.3);
+        }
+
+        .quick-title {
+            font-size: 22px;
+            color: #39FF14;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .quick-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .quick-btn {
+            background: #ff1152;
+            color: #fff;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quick-btn:hover {
+            background: #ff006e;
+            transform: translateX(5px);
+        }
+
+        .quick-btn-icon {
+            font-size: 24px;
+        }
+
+        .quick-btn.secondary {
+            background: transparent;
+            border: 2px solid #39FF14;
+            color: #39FF14;
+        }
+
+        .quick-btn.secondary:hover {
+            background: #39FF14;
+            color: #000;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff1152, #ff006e);
+            padding: 60px;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 42px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #ff1152;
+            padding: 20px 45px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: #fff;
+            padding: 20px 45px;
+            border: 3px solid #fff;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1800px) {
+            .hero-content,
+            .plan-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-diagonal {
+                width: 100%;
+                clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            .plan-diagonal-bg {
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 70%);
+            }
+
+            .hero-title,
+            .hero-subtitle-line {
+                font-size: 48px;
+            }
+
+            .plan-title {
+                font-size: 52px;
+            }
+
+            .pricing-grid,
+            .ready-jump-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Pricing & Packages Section */
+        .section-accent-pink {
+            background: #000;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-accent-pink::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,17,82,0.15) 0%, transparent 60%);
+        }
+
+        .container-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-badge-dark {
+            display: inline-block;
+            background: #000;
+            color: #39FF14;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .section-title-dark {
+            font-size: 64px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .pink-text {
+            color: #ff1152;
+        }
+
+        .section-subtitle-dark {
+            font-size: 20px;
+            color: rgba(255,255,255,0.8);
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .pricing-card {
+            background: #fff;
+            padding: 50px 35px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 4px solid #000;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #39FF14;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .pricing-icon {
+            font-size: 64px;
+            margin-bottom: 25px;
+        }
+
+        .pricing-title {
+            font-size: 28px;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .pricing-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .btn-pricing {
+            background: #ff1152;
+            color: #fff;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-pricing:hover {
+            background: #ff006e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255,17,82,0.4);
+        }
+
+        .btn-pricing-featured {
+            background: #000;
+            color: #39FF14;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-pricing-featured:hover {
+            background: #39FF14;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(57,255,20,0.4);
+        }
+
+        /* Ready to Jump Section */
+        .section-accent-green {
+            background: #39FF14;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-accent-green::before {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            right: -20%;
+            width: 70%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0,0,0,0.05) 0%, transparent 60%);
+        }
+
+        .ready-jump-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .ready-jump-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-circle {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #ff1152, #ff006e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 80px rgba(255,17,82,0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .visual-icon {
+            font-size: 120px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        .ready-jump-content {
+            max-width: 650px;
+        }
+
+        .section-badge-green {
+            display: inline-block;
+            background: #000;
+            color: #39FF14;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .ready-jump-title {
+            font-size: 56px;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .green-highlight {
+            color: #ff1152;
+        }
+
+        .ready-jump-text {
+            font-size: 17px;
+            color: #000;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .ready-jump-text strong {
+            font-weight: bold;
+            color: #ff1152;
+        }
+
+        .btn-ready-jump {
+            background: #000;
+            color: #39FF14;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-ready-jump:hover {
+            background: #ff1152;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,17,82,0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 3px solid #39FF14;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .footer-text {
+            color: #e0e0e0;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        .footer-subtext {
+            color: #999;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section (for context showing the flow) -->
+    <section class="hero-section">
+        <div class="hero-diagonal"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="hero-badge">ULTIMATE INDOOR ENTERTAINMENT</span>
+                <h1 class="hero-title">AEROSPORTS</h1>
+                <h2 class="hero-subtitle-line">OAKVILLE</h2>
+                <p class="hero-description">The Ultimate Indoor Trampoline Park & Family Entertainment Center</p>
+                
+                <div class="hero-text-box">
+                    <p>Welcome to <strong>AeroSports oakville</strong>, the top choice for <strong>indoor activities</strong>. Our trampoline park spans over 27,000 square feet, providing endless fun for kids, teens, and adults. Perfect for family outings and solo adventurers alike, AeroSports offers an array of activities including <strong>wall-to-wall trampolines</strong>, thrilling <strong>climbing walls</strong>, and an exciting <strong>dodgeball arena</strong>.</p>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="btn-pink">VIEW PRICING & PROMOS</button>
+                    <button class="btn-outline">BUY YOUR TICKETS</button>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="map-card">
+                    <div class="map-card-header">
+                        <h3 class="map-card-title">📍 WHERE ARE WE LOCATED?</h3>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.234567!2d-79.6789!3d43.4567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDI3JzI0LjEiTiA3OcKwNDAnNDQuMCJX!5e0!3m2!1sen!2sca!4v1234567890"></iframe>
+                    </div>
+                    <div class="map-card-footer">
+                        <p class="map-address">2679 Bristol Cir, Oakville, ON L6H 6Z8</p>
+                        <p class="map-text">We have locations all over the globe. You can find your local park using our park locator on our website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPROVED Plan Your Visit Section -->
+    <section class="plan-visit-section">
+        <!-- Diagonal continuation from above -->
+        <div class="plan-diagonal-bg"></div>
+
+        <div class="plan-content-wrapper">
+            <!-- Section Header -->
+            <div class="plan-header">
+                <span class="plan-badge">PLAN YOUR VISIT</span>
+                <h2 class="plan-title">
+                    READY FOR<br>
+                    <span>AEROSPORTS?</span>
+                </h2>
+                <p class="plan-subtitle">
+                    Searching for indoor activities? Look no further! AeroSports is the best place for indoor fun, whether you're planning an unforgettable kids' birthday party, a family outing, or an exciting group event.
+                </p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="plan-grid">
+                <!-- Why Choose Card -->
+                <div class="why-choose-card">
+                    <h3 class="why-title">
+                        WHY CHOOSE<br>
+                        <span>AEROSPORTS?</span>
+                    </h3>
+                    <div class="why-divider"></div>
+                    
+                    <div class="why-features">
+                        <div class="why-feature">
+                            <div class="feature-icon">🎂</div>
+                            <div class="feature-content">
+                                <h4>Epic Birthday Parties</h4>
+                                <p>All-inclusive packages with private room, host, pizza, and open-jump. Making celebrations unforgettable and stress-free.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-feature">
+                            <div class="feature-icon">👥</div>
+                            <div class="feature-content">
+                                <h4>Perfect for Groups</h4>
+                                <p>School events, corporate team building, and private gatherings. Special rates available for groups of all sizes.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-feature">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-content">
+                                <h4>Safe & Engaging</h4>
+                                <p>Trained staff, state-of-the-art equipment, and engaging experiences for all ages in a safe environment.</p>
+                            </div>
+                        </div>
+
+                        <div class="why-feature">
+                            <div class="feature-icon">📍</div>
+                            <div class="feature-content">
+                                <h4>Great Location</h4>
+                                <p>Conveniently located near major cities with 27,000 square feet of pure excitement and adventure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Card -->
+                <div class="quick-actions-card">
+                    <h3 class="quick-title">⚡ QUICK ACTIONS</h3>
+                    <div class="quick-buttons">
+                        <button class="quick-btn">
+                            <span>🎂 BIRTHDAY PARTIES</span>
+                            <span class="quick-btn-icon">→</span>
+                        </button>
+                        <button class="quick-btn">
+                            <span>👥 GROUP EVENTS</span>
+                            <span class="quick-btn-icon">→</span>
+                        </button>
+                        <button class="quick-btn">
+                            <span>🏢 CORPORATE EVENTS</span>
+                            <span class="quick-btn-icon">→</span>
+                        </button>
+                        <button class="quick-btn secondary">
+                            <span>🎟️ BUY TICKETS NOW</span>
+                            <span class="quick-btn-icon">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3 class="cta-title">GET READY TO JUMP!</h3>
+                    <p class="cta-text">
+                        Book your visit today and experience the ultimate indoor adventure. Whether it's a birthday party, family outing, or group event - we've got you covered!
+                    </p>
+                    <div class="cta-buttons">
+                        <button class="btn-white">VIEW PRICING & PROMOS</button>
+                        <button class="btn-outline-white">BUY YOUR TICKETS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Packages Section -->
+    <section class="section-accent-pink">
+        <div class="container-section">
+            <div class="section-header-center">
+                <span class="section-badge-dark">PRICING & PACKAGES</span>
+                <h2 class="section-title-dark">Choose Your <span class="pink-text">Adventure</span></h2>
+                <p class="section-subtitle-dark">Flexible options for every budget</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-icon">🎪</div>
+                    <h3 class="pricing-title">Open Jump</h3>
+                    <p class="pricing-description">Single entry with unlimited jump time. Perfect for walk-ins and casual visitors.</p>
+                    <button class="btn-pricing">Book Now →</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">MOST POPULAR</div>
+                    <div class="pricing-icon">🎂</div>
+                    <h3 class="pricing-title">Party Packages</h3>
+                    <p class="pricing-description">Complete celebration packages with private space, snacks, and dedicated party host.</p>
+                    <button class="btn-pricing-featured">Book Now →</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-icon">👥</div>
+                    <h3 class="pricing-title">Group Events</h3>
+                    <p class="pricing-description">Custom packages for school trips, team building, and corporate events.</p>
+                    <button class="btn-pricing">Book Now →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Jump Section -->
+    <section class="section-accent-green">
+        <div class="container-section">
+            <div class="ready-jump-grid">
+                <div class="ready-jump-visual">
+                    <div class="visual-circle">
+                        <span class="visual-icon">🚀</span>
+                    </div>
+                </div>
+                <div class="ready-jump-content">
+                    <span class="section-badge-green">READY TO JUMP?</span>
+                    <h2 class="ready-jump-title">Book Your <span class="green-highlight">Experience</span> Today</h2>
+                    <p class="ready-jump-text">
+                        Don't wait! Reserve your spot and prepare for an <strong>unforgettable adventure</strong>.
+                        Choose from our flexible scheduling options to find the perfect time for your visit.
+                    </p>
+                    <p class="ready-jump-text">
+                        Our friendly staff is ready to ensure your experience is <strong>safe, fun, and memorable</strong>.
+                        Contact us today to learn more about our current promotions and availability.
+                    </p>
+                    <button class="btn-ready-jump">Get Started Now →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">&copy; 2024 AeroSports. All rights reserved.</p>
+            <p class="footer-subtext">Design with Electric Energy • Solid Brand Colors • High Contrast Layout</p>
+        </div>
+    </footer>
+</body>
+</html>

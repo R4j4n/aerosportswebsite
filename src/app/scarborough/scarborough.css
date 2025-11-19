@@ -155,7 +155,7 @@
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f00c74 50%, #caff1a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff1152 50%, #caff1a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -175,7 +175,7 @@
 .location-name {
   display: block;
   font-size: clamp(2.5rem, 7vw, 6rem);
-  background: linear-gradient(135deg, #caff1a 0%, #f00c74 100%);
+  background: linear-gradient(135deg, #caff1a 0%, #ff1152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -219,7 +219,7 @@
 }
 
 .primary-cta {
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   color: #0a0a0a;
   box-shadow: 0 10px 40px rgba(240, 12, 116, 0.4);
 }
@@ -298,7 +298,7 @@
 
 .exclusive-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   padding: 12px 30px;
   border-radius: 50px;
   margin-bottom: 2rem;
@@ -354,7 +354,7 @@
 .feature-item:hover {
   transform: translateY(-5px);
   background: rgba(240, 12, 116, 0.1);
-  border-color: #f00c74;
+  border-color: #ff1152;
   box-shadow: 0 10px 30px rgba(240, 12, 116, 0.3);
 }
 
@@ -381,7 +381,7 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f00c74 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff1152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -432,7 +432,7 @@
 }
 
 .attraction-card:hover {
-  border-color: #f00c74;
+  border-color: #ff1152;
   box-shadow: 0 20px 60px rgba(240, 12, 116, 0.3);
 }
 
@@ -440,7 +440,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   color: #0a0a0a;
   padding: 8px 16px;
   border-radius: 20px;
@@ -509,7 +509,7 @@
 }
 
 .address-card:hover {
-  border-color: #f00c74;
+  border-color: #ff1152;
   background: rgba(240, 12, 116, 0.1);
   box-shadow: 0 10px 40px rgba(240, 12, 116, 0.3);
   transform: translateY(-5px);
@@ -528,7 +528,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f00c74 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff1152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -607,7 +607,7 @@
 }
 
 .contact-card:hover {
-  border-color: #f00c74;
+  border-color: #ff1152;
   background: rgba(240, 12, 116, 0.1);
   box-shadow: 0 10px 40px rgba(240, 12, 116, 0.3);
 }
@@ -638,7 +638,7 @@
 }
 
 .prebook-cta {
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   color: #0a0a0a;
   padding: 20px 50px;
   font-size: 1.2rem;
@@ -686,7 +686,7 @@
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f00c74 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff1152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -756,7 +756,7 @@
 .footer-logo h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -851,7 +851,7 @@
 
 .modal-close:hover {
   background: rgba(240, 12, 116, 0.3);
-  border-color: #f00c74;
+  border-color: #ff1152;
   transform: rotate(90deg);
 }
 
@@ -865,7 +865,7 @@
   font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f00c74 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ff1152 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -922,7 +922,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #f00c74;
+  border-color: #ff1152;
   background: rgba(240, 12, 116, 0.1);
   box-shadow: 0 0 20px rgba(240, 12, 116, 0.2);
 }
@@ -951,7 +951,7 @@
 }
 
 .checkbox-label:hover {
-  border-color: #f00c74;
+  border-color: #ff1152;
   background: rgba(240, 12, 116, 0.1);
 }
 
@@ -960,7 +960,7 @@
   height: 20px;
   min-width: 20px;
   cursor: pointer;
-  accent-color: #f00c74;
+  accent-color: #ff1152;
   margin: 0;
   flex-shrink: 0;
 }
@@ -988,7 +988,7 @@
 .submit-button {
   width: 100%;
   padding: 18px 40px;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   color: #0a0a0a;
   font-size: 1.1rem;
   font-weight: bold;
@@ -1034,7 +1034,7 @@
 .success-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #f00c74 0%, #caff1a 100%);
+  background: linear-gradient(135deg, #ff1152 0%, #caff1a 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;

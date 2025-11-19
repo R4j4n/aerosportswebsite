@@ -24,7 +24,7 @@
 
 .aero_category_section_card_wrap {
   position: relative;
-  border: 2px solid rgba(240, 12, 116, 0.5);
+  border: 2px solid rgba(255, 17, 82, 0.5);
   clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
   overflow: clip;
   aspect-ratio: 3/2;
@@ -33,7 +33,7 @@
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideUp 0.6s ease forwards;
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3);
 }
 
 .aero_category_section_card_wrap:nth-child(1) { animation-delay: 0.1s; }
@@ -50,7 +50,7 @@
 
 .aero_category_section_card_wrap:hover {
   transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.5), 0 0 40px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.5), 0 0 40px rgba(202, 255, 26, 0.3);
   z-index: 2;
   border-color: rgba(202, 255, 26, 0.8);
 }
@@ -68,9 +68,9 @@
 }
 
 .aero_category_section_card_desc {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.3) 0%, rgba(202, 255, 26, 0.2) 100%);
   clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
-  border: 2px solid rgba(240, 12, 116, 0.5);
+  border: 2px solid rgba(255, 17, 82, 0.5);
   bottom: 0;
   left: 0;
   right: 0;
@@ -82,7 +82,7 @@
   flex-direction: column;
   gap: 0.6rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(240, 12, 116, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 17, 82, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -100,9 +100,9 @@
 }
 
 .aero_category_section_card_wrap:hover .aero_category_section_card_desc {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(255, 17, 82, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
 }
 
 .aero_category_section_card_wrap:hover .aero_category_section_card_desc::before {
