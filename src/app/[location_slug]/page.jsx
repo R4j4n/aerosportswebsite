@@ -557,7 +557,7 @@ const styles = {
     width: '55%',
     height: '100%',
     background: 'linear-gradient(135deg, #ff1152 0%, #ff4d7d 100%)',
-    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)',
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 100% 100%)',
     zIndex: 0,
   },
   seoContainer: {
@@ -694,7 +694,7 @@ const styles = {
   planVisitSection: {
     position: 'relative',
     background: '#000000',
-    padding: '5rem 0 6rem',
+    padding: '2rem 0 6rem',
     overflow: 'hidden',
   },
   planVisitDiagonalBg: {
