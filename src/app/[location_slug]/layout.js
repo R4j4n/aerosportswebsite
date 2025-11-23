@@ -17,7 +17,7 @@ export default async function LocationLayout({ children, params }) {
 
   return (
     <div>
-      <Header location_slug={location_slug} configdata={configdata} />
+      <Header location_slug={location_slug} configdata={configdata} menudata={menudata} />
       {children}
       <Footer
         location_slug={location_slug}

@@ -6,6 +6,7 @@ import { getDataByParentId } from "@/utils/customFunctions";
 import Countup from "@/components/Countup";
 import MotionImage from "@/components/MotionImage";
 import PromotionModal from "@/components/model/PromotionModal";
+import ExploreAttractionsSection from "@/components/ExploreAttractionsSection";
 import { fetchsheetdata, fetchMenuData, getWaiverLink,generateMetadataLib,generateSchema } from "@/lib/sheets";
 
 export async function generateMetadata({ params }) {
@@ -128,7 +129,7 @@ const Home = async ({ params }) => {
                 <div style={styles.mapContainer}>
                   <iframe
                     src={`https://maps.google.com/maps?width=720&height=600&hl=en&q=Aerosports+${locationData?.[0]?.location}&t=&z=13&ie=UTF8&iwloc=B&output=embed`}
-                    style={{ width: '100%', height: '400px', border: 'none', borderRadius: '12px' }}
+                    style={{ width: '100%', height: '400px', border: 'none', borderRadius: '0px' }}
                   />
                 </div>
                 <div style={styles.locationInfo}>
@@ -157,7 +158,7 @@ const Home = async ({ params }) => {
                 <span style={styles.planTitleAccent}>AeroSports?</span>
               </h2>
               <p style={styles.planSubtitle}>
-                Searching for indoor activities? Look no further! AeroSports is the best place for indoor fun, whether you're planning an unforgettable kids' birthday party, a family outing, or an exciting group event.
+                Searching for indoor activities? Look no further! AeroSports is the best place for indoor fun, whether you&apos;re planning an unforgettable kids&apos; birthday party, a family outing, or an exciting group event.
               </p>
             </div>
 
@@ -166,253 +167,116 @@ const Home = async ({ params }) => {
         </section>
       )}
 
-      {/* Pricing & Packages Section - Black Background */}
+      {/* Celebrate Your Event Section - Black Background */}
 {attractionsData?.[0]?.children?.length > 0 && (
-  <section className="aero_home-playsection-bg">
-    <section className="aero-max-container">
-      <h2 className="heading-with-icon">
-        <svg
-          className="promotions__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <rect x="3" y="8" width="18" height="4" rx="1"></rect>
-          <path d="M12 8v13"></path>
-          <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
-          <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
-        </svg>
-        Celebrate Your Event
-      </h2>
+  <section style={styles.celebrateSection}>
+    <div style={styles.celebrateContainer}>
+      {/* Section Header */}
+      <div style={styles.celebrateHeader}>
+        <div style={styles.celebrateBadge}>
+          <span>Celebrate</span>
+        </div>
+        <h2 style={styles.celebrateTitle}>
+          Elevate Your <span style={styles.celebrateTitleAccent}>Event</span>
+        </h2>
+        <p style={styles.celebrateSubtitle}>
+          Turn any occasion into an unforgettable adventure at AeroSports
+        </p>
+      </div>
 
-      <p className="aero_section_subtitle">
-        Elevate your event to the next level at Aerosports!
-      </p>
-
-      <div className="offer-section__inner">
-        <article className="offer-card">
+      {/* Events Grid */}
+      <div style={styles.celebrateGrid}>
+        {/* Team Building */}
+        <article style={styles.eventCard}>
           <div
-            className="offer-card__img"
             style={{
+              ...styles.eventCardImage,
               backgroundImage:
                 "url('https://storage.googleapis.com/aerosports/team-building-aerosports-trampoline-park.png')",
             }}
             role="img"
             aria-label="Team Building Events"
           >
-            <h3 className="offer-card__title">Team Building Events</h3>
+            <h3 style={styles.eventCardTitle}>Team Building</h3>
           </div>
-          <div className="offer-card__body">
-            <p>
-              Host your next team building day at Aerosports and turn work into
-              play! Our team-based attractions promote collaboration,
-              problem-solving, and laughter. Teamwork has never been this much
-              fun!
+          <div style={styles.eventCardBody}>
+            <p style={styles.eventCardText}>
+              Promote collaboration and problem-solving with our engaging team-based attractions.
             </p>
             <Link
               href={`/${location_slug}/groups-events/corporate-parties-events-groups`}
-              className="sigma_btn-custom"
+              style={styles.eventCardLink}
             >
               More Info →
             </Link>
           </div>
         </article>
 
-        <article className="offer-card">
+        {/* Birthday Parties */}
+        <article style={styles.eventCard}>
           <div
-            className="offer-card__img"
             style={{
+              ...styles.eventCardImage,
               backgroundImage:
                 "url('https://storage.googleapis.com/aerosports/celeberate-your-birthday-parties-at-aerosports.png')",
             }}
             role="img"
             aria-label="Birthday Parties"
           >
-            <h3 className="offer-card__title">BIRTHDAY PARTIES</h3>
+            <h3 style={styles.eventCardTitle}>Birthday Parties</h3>
           </div>
-          <div className="offer-card__body">
-            <p>
-              Epic for them. Easy for you. All-inclusive party packages with
-              private room, host, pizza, open-jump & more.
+          <div style={styles.eventCardBody}>
+            <p style={styles.eventCardText}>
+              All-inclusive packages with private room, host, pizza, and open-jump access.
             </p>
             <Link
               href={`/${location_slug}/kids-birthday-parties`}
-              className="sigma_btn-custom"
+              style={styles.eventCardLink}
             >
-              COMPARE PACKAGES →
+              Compare Packages →
             </Link>
           </div>
         </article>
 
-        <article className="offer-card">
+        {/* Field Trips */}
+        <article style={styles.eventCard}>
           <div
-            className="offer-card__img"
             style={{
+              ...styles.eventCardImage,
               backgroundImage:
                 "url('https://storage.googleapis.com/aerosports/schools-field-trips-at-aerosports.png')",
             }}
             role="img"
             aria-label="Field Trips"
           >
-            <h3 className="offer-card__title">Field Trips</h3>
+            <h3 style={styles.eventCardTitle}>Field Trips</h3>
           </div>
-          <div className="offer-card__body">
-            <p>
-              We offer special Field Trip rates for groups of 10–29 jumpers. For
-              30+ or to book space and food, please call us!
+          <div style={styles.eventCardBody}>
+            <p style={styles.eventCardText}>
+              Special group rates for schools and educational organizations.
             </p>
             <Link
               href={`/${location_slug}/groups-events/school-groups`}
-              className="sigma_btn-custom"
+              style={styles.eventCardLink}
             >
               More Info →
             </Link>
           </div>
         </article>
       </div>
-    </section>
+    </div>
   </section>
 )}
 
-
-      {/* Ready to Jump Section - Green Background */}
-
-
-      {/* Event Celebration Cards - Centered Container */}
-      {/* <section className="aero_home-playsection-bg">
-        <section className="aero-max-container">
-          <h2 className="heading-with-icon">
-            <svg
-              className="promotions__icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="3" y="8" width="18" height="4" rx="1"></rect>
-              <path d="M12 8v13"></path>
-              <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
-              <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
-            </svg>
-            Celebrate Your Event
-          </h2>
-          <p className="aero_section_subtitle">Elevate your event to the next level at Aerosports!</p>
-
-          <div className="offer-section__inner">
-            <article className="offer-card">
-              <div
-                className="offer-card__img"
-                style={{ backgroundImage: "url('https://storage.googleapis.com/aerosports/team-building-aerosports-trampoline-park.png')" }}
-                role="img"
-                aria-label="Team Building Events"
-              >
-                <h3 className="offer-card__title">Team Building Events</h3>
-              </div>
-              <div className="offer-card__body">
-                <p>Host your next team building day at Aerosports and turn work into play! Our team-based attractions promote collaboration, problem-solving, and laughter. Teamwork has never been this much fun!</p>
-                <Link href={`/${location_slug}/groups-events/corporate-parties-events-groups`} className="sigma_btn-custom">
-                  More Info →
-                </Link>
-              </div>
-            </article>
-
-            <article className="offer-card">
-              <div
-                className="offer-card__img"
-                style={{ backgroundImage: "url('https://storage.googleapis.com/aerosports/celeberate-your-birthday-parties-at-aerosports.png')" }}
-                role="img"
-                aria-label="Birthday Parties"
-              >
-                <h3 className="offer-card__title">BIRTHDAY PARTIES</h3>
-              </div>
-              <div className="offer-card__body">
-                <p>Epic for them. Easy for you. All-inclusive party packages with private room, host, pizza, open-jump & more.</p>
-                <Link href={`/${location_slug}/kids-birthday-parties`} className="sigma_btn-custom">
-                  COMPARE PACKAGES →
-                </Link>
-              </div>
-            </article>
-
-            <article className="offer-card">
-              <div
-                className="offer-card__img"
-                style={{ backgroundImage: "url('https://storage.googleapis.com/aerosports/schools-field-trips-at-aerosports.png')" }}
-                role="img"
-                aria-label="Field Trips"
-              >
-                <h3 className="offer-card__title">Field Trips</h3>
-              </div>
-              <div className="offer-card__body">
-                <p>We offer special Field Trip rates for groups of 10–29 jumpers. For 30+ or to book space and food, please call us!</p>
-                <Link href={`/${location_slug}/groups-events/school-groups`} className="sigma_btn-custom">
-                  More Info →
-                </Link>
-              </div>
-            </article>
-          </div>
-        </section>
-      </section> */}
-
-      {/* Explore Attractions - Full Width Background with Centered Content */}
+      {/* Explore Attractions - Black Background with Grid Layout */}
       {attractionsData?.[0]?.children?.length > 0 && (
-        <section className="aero_home_article_section">
-          <section className="aero-max-container">
-            <div className="aero_section_header">
-              <h2 className="heading-with-icon">
-                <svg
-                  className="promotions__icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l3 3" />
-                </svg>
-                Explore Attractions
-              </h2>
-              <Link href={`/${location_slug}/attractions`} className="aero-btn-booknow" prefetch>
-                <button>View All</button>
-              </Link>
-            </div>
-
-            <ul className="attractions-grid">
-              {attractionsData[0]?.children?.map((item, i) => (
-                <li key={i}>
-                  <Link href={`/${location_slug}/${item?.parentid}/${item?.path}`} prefetch>
-                    <article className="attraction-figure">
-                      <figure>
-                        <Image
-                          src={item?.smallimage}
-                          width={330}
-                          height={200}
-                          alt={item?.iconalttextforhomepage}
-                          unoptimized
-                        />
-                        <figcaption className="figcaption-bg">
-                          <h3>{item?.desc}</h3>
-                        </figcaption>
-                      </figure>
-                    </article>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </section>
+        <ExploreAttractionsSection
+          attractions={attractionsData[0]?.children}
+          location_slug={location_slug}
+        />
       )}
 
-      {/* Statistics Section - Centered Container */}
+      {/* Statistics Section - Centered Container
       {attractionsData?.[0]?.children?.length > 0 && (
         <section className="aero_home_feature_section-bg">
           <section className="aero-max-container aero_home_feature_section">
@@ -429,7 +293,7 @@ const Home = async ({ params }) => {
             ))}
           </section>
         </section>
-      )}
+      )} */}
       <script type="application/ld+json" suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: jsonLDschema }}
       />
@@ -450,13 +314,16 @@ const styles = {
   heroSection: {
     position: 'relative',
     width: '100%',
-    minHeight: '80vh',
+    minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
     margin: 0,
     padding: 0,
+    marginTop: '-200px',
+    paddingTop: '200px',
+    boxSizing: 'border-box',
   },
   heroOverlay: {
     position: 'absolute',
@@ -470,6 +337,7 @@ const styles = {
     justifyContent: 'center',
     zIndex: 2,
     padding: '2rem',
+    paddingTop: '200px',
   },
   heroContainer: {
     maxWidth: '1000px',
@@ -479,8 +347,8 @@ const styles = {
   heroBadge: {
     display: 'inline-block',
     background: 'transparent',
-    border: '2px solid #caff1a',
-    color: '#caff1a',
+    border: '2px solid #39FF14',
+    color: '#39FF14',
     padding: '0.8rem 1.8rem',
     borderRadius: '50px',
     fontSize: '0.85rem',
@@ -501,7 +369,7 @@ const styles = {
     animation: 'fadeInUp 1s ease-out 0.2s backwards',
   },
   heroTitleAccent: {
-    color: '#caff1a',
+    color: '#39FF14',
   },
   heroSubtitle: {
     fontSize: '1.15rem',
@@ -537,8 +405,8 @@ const styles = {
   },
   btnSecondary: {
     background: 'transparent',
-    borderColor: '#caff1a',
-    color: '#caff1a',
+    borderColor: '#39FF14',
+    color: '#39FF14',
     boxShadow: '0 8px 25px rgba(202, 255, 26, 0.3)',
   },
   // SEO Section - Diagonal Split Layout
@@ -694,7 +562,7 @@ const styles = {
   planVisitSection: {
     position: 'relative',
     background: '#000000',
-    padding: '2rem 0 6rem',
+    padding: '2rem 0 0rem',
     overflow: 'hidden',
   },
   planVisitDiagonalBg: {
@@ -1149,6 +1017,119 @@ const styles = {
     boxShadow: '0 0.625rem 1.875rem rgba(0,0,0,0.3)',
     textDecoration: 'none',
     display: 'inline-block',
+  },
+  // Celebrate Your Event Section
+  celebrateSection: {
+    background: '#000000',
+    padding: '3rem 0',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  celebrateContainer: {
+    maxWidth: '1400px',
+    margin: '0 auto',
+    padding: '0 2rem',
+    position: 'relative',
+    zIndex: 1,
+  },
+  celebrateHeader: {
+    textAlign: 'center',
+    marginBottom: '4rem',
+    maxWidth: '800px',
+    margin: '0 auto 4rem',
+  },
+  celebrateBadge: {
+    display: 'inline-block',
+    background: '#39FF14',
+    color: '#000000',
+    padding: '0.6rem 1.5rem',
+    borderRadius: '50px',
+    fontSize: '0.75rem',
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: '1.25px',
+    marginBottom: '1.5rem',
+  },
+  celebrateTitle: {
+    fontSize: 'clamp(2.5rem, 8vw, 4rem)',
+    fontWeight: '900',
+    textTransform: 'uppercase',
+    lineHeight: '0.95',
+    marginBottom: '1.5rem',
+    color: '#ffffff',
+  },
+  celebrateTitleAccent: {
+    color: '#ff1152',
+  },
+  celebrateSubtitle: {
+    fontSize: '1.1rem',
+    color: 'rgba(255, 255, 255, 0.8)',
+    lineHeight: '1.7',
+  },
+  celebrateGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '2.5rem',
+    animation: 'fadeInUp 0.8s ease-out',
+  },
+  eventCard: {
+    background: '#ffffff',
+    borderRadius: '1rem',
+    overflow: 'hidden',
+    boxShadow: '0 15px 50px rgba(0, 0, 0, 0.4)',
+    transition: 'all 0.3s ease',
+    display: 'flex',
+    flexDirection: 'column',
+    border: '1px solid rgba(57, 255, 20, 0.1)',
+  },
+  eventCardImage: {
+    width: '100%',
+    height: '200px',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#ffffff',
+    textAlign: 'center',
+    padding: '2rem',
+    background: 'linear-gradient(135deg, rgba(255, 17, 82, 0.85), rgba(255, 77, 125, 0.85))',
+    backgroundBlendMode: 'multiply',
+  },
+  eventCardTitle: {
+    fontSize: '1.3rem',
+    fontWeight: '800',
+    textTransform: 'uppercase',
+    letterSpacing: '1.2px',
+    color: '#ffffff',
+    lineHeight: '1.2',
+    textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
+  },
+  eventCardBody: {
+    padding: '2rem',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  eventCardText: {
+    fontSize: '0.95rem',
+    lineHeight: '1.7',
+    color: '#444444',
+    marginBottom: '1.5rem',
+    flex: 1,
+  },
+  eventCardLink: {
+    fontSize: '0.85rem',
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    color: '#ff1152',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    display: 'inline-block',
+    padding: '0.5rem 0',
+    position: 'relative',
   },
 };
 
