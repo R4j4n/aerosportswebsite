@@ -6,15 +6,22 @@
 }
 
 .aero-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(240, 12, 116, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(202, 255, 26, 0.1) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(240, 12, 116, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(202, 255, 26, 0.1) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: 0;
 }
@@ -35,7 +42,7 @@
 .city-card-h1-heading {
   text-align: center;
   font-size: 2.5rem;
-  background: linear-gradient(45deg, #ff1152, #caff1a);
+  background: linear-gradient(135deg, #f00c74 0%, #ff1152 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -63,7 +70,11 @@
 /* Location Card - Matching aero_attraction_card */
 .city-card-wrap {
   position: relative;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
@@ -71,20 +82,40 @@
   opacity: 0;
   transform: translateY(30px);
   animation: cardFadeIn 0.6s ease forwards;
-  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.3), 0 0 0 2px rgba(240, 12, 116, 0.2);
-  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  box-shadow: 0 10px 30px rgba(240, 12, 116, 0.3),
+    0 0 0 2px rgba(240, 12, 116, 0.2);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-.city-card-wrapper a:nth-child(1) .city-card-wrap { animation-delay: 0.1s; }
-.city-card-wrapper a:nth-child(2) .city-card-wrap { animation-delay: 0.2s; }
-.city-card-wrapper a:nth-child(3) .city-card-wrap { animation-delay: 0.3s; }
-.city-card-wrapper a:nth-child(4) .city-card-wrap { animation-delay: 0.4s; }
-.city-card-wrapper a:nth-child(5) .city-card-wrap { animation-delay: 0.5s; }
-.city-card-wrapper a:nth-child(6) .city-card-wrap { animation-delay: 0.6s; }
+.city-card-wrapper a:nth-child(1) .city-card-wrap {
+  animation-delay: 0.1s;
+}
+.city-card-wrapper a:nth-child(2) .city-card-wrap {
+  animation-delay: 0.2s;
+}
+.city-card-wrapper a:nth-child(3) .city-card-wrap {
+  animation-delay: 0.3s;
+}
+.city-card-wrapper a:nth-child(4) .city-card-wrap {
+  animation-delay: 0.4s;
+}
+.city-card-wrapper a:nth-child(5) .city-card-wrap {
+  animation-delay: 0.5s;
+}
+.city-card-wrapper a:nth-child(6) .city-card-wrap {
+  animation-delay: 0.6s;
+}
 
 @keyframes cardFadeIn {
   to {
@@ -95,7 +126,8 @@
 
 .city-card-wrap:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.5), 0 0 60px rgba(202, 255, 26, 0.4);
+  box-shadow: 0 20px 50px rgba(240, 12, 116, 0.5),
+    0 0 60px rgba(202, 255, 26, 0.4);
 }
 
 /* Card Image Container */
@@ -142,7 +174,7 @@
 .city-card-title {
   font-size: 1.2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #ff1152, #caff1a);
+  background: linear-gradient(90deg, #ff1152 0%, #f00c74 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -187,7 +219,11 @@
 /* CTA Button */
 .city-card-cta {
   display: block;
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.4) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(240, 12, 116, 0.4) 0%,
+    rgba(202, 255, 26, 0.3) 100%
+  );
   clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
   color: #fff;
   padding: 0.7em 1em;
@@ -205,21 +241,31 @@
 }
 
 .city-card-cta::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s ease;
   transform: skewX(-20deg);
 }
 
 .city-card-wrap:hover .city-card-cta {
-  background: linear-gradient(135deg, rgba(240, 12, 116, 0.5) 0%, rgba(202, 255, 26, 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(240, 12, 116, 0.5) 0%,
+    rgba(202, 255, 26, 0.3) 100%
+  );
   border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5), 0 0 30px rgba(202, 255, 26, 0.3);
+  box-shadow: 0 6px 20px rgba(240, 12, 116, 0.5),
+    0 0 30px rgba(202, 255, 26, 0.3);
   transform: translateX(5px);
 }
 

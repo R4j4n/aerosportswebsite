@@ -5,99 +5,152 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 const MotionImage = ({ pageData, waiverLink, locationData }) => {
-	//console.log(header_image);
-	const item = Array.isArray(pageData) && pageData.length > 0 ? pageData[0] : pageData;
-	// Handle case when no item exists
-	if (!item) return null;
+  //console.log(header_image);
+  const item =
+    Array.isArray(pageData) && pageData.length > 0 ? pageData[0] : pageData;
+  // Handle case when no item exists
+  if (!item) return null;
 
+  const locData = locationData[0];
+  const hasVideo = !!item.video;
+  const toTelHref = (phone) => {
+    const digits = (phone || "").replace(/\D/g, "");
+    if (!digits) return "tel:";
+    // North America: add +1 if missing, keep leading 1 if present
+    const e164 =
+      digits.length === 11 && digits.startsWith("1")
+        ? `+${digits}`
+        : `+1${digits}`;
+    return `tel:${e164}`;
+  };
 
-	const locData = locationData[0];
-	const hasVideo = !!item.video;
-	const toTelHref = (phone) => {
-		const digits = (phone || "").replace(/\D/g, "");
-		if (!digits) return "tel:";
-		// North America: add +1 if missing, keep leading 1 if present
-		const e164 = digits.length === 11 && digits.startsWith("1") ? `+${digits}` : `+1${digits}`;
-		return `tel:${e164}`;
-	};
-	return (
-		<section className="aero_home-headerimg-wrapper"
-			style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', margin: 0, padding: 0, zIndex: 1, overflow: 'hidden' }}
-		>
-			{hasVideo ? (
-				<section className="aero_home_video-container" style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%', margin: 0, padding: 0, overflow: 'hidden' }}>
-					<video autoPlay muted loop style={{ width: '100%', height: '100%', display: 'block', margin: 0, padding: 0, objectFit: 'cover' }}>
-						<source src={item.video} type="video/mp4" />
-					</video>
-					<article className="image-content">
+  if (hasVideo)
+    return (
+      <section
+        className="aero_home-headerimg-wrapper"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100%",
+          height: "100%",
+          margin: 0,
+          padding: 0,
+          zIndex: 1,
+          overflow: "hidden",
+        }}
+      >
+        <section
+          className="aero_home_video-container"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: "100%",
+            height: "100%",
+            margin: 0,
+            padding: 0,
+            overflow: "hidden",
+          }}
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "block",
+              margin: 0,
+              padding: 0,
+              objectFit: "cover",
+            }}
+          >
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <article className="image-content"></article>
+        </section>
+      </section>
+    );
 
-					</article>
+  return (
+    <section className="aero_home-headerimg-wrapper">
+      <div className="aero_home-headerimg-container">
+        <div
+          className="image-container"
+          style={{ maxHeight: "600px", minHeight: "450px" }}
+        >
+          <Image
+            src={
+              item.headerimage ||
+              "https://storage.googleapis.com/aerosports/aerosports-trampoline-park-redefine-fun.svg"
+            } // Ensure `item.image` has valid URL
+            alt={item.headerimagetitle || "Aerosports fun for everyone"}
+            layout="fill"
+            objectFit="cover"
+            quality={85}
+            priority
+          />
 
-				</section>
-			) : (
-				<div className="aero_home-headerimg-container">
-					<div
-						className="image-container"
-						style={{ maxHeight: "600px", minHeight: "450px" }}
-					>
-						<Image
-							src={item.headerimage || 'https://storage.googleapis.com/aerosports/aerosports-trampoline-park-redefine-fun.svg'} // Ensure `item.image` has valid URL
-							alt={item.headerimagetitle || "Aerosports fun for everyone"}
-							layout="fill"
-							objectFit="cover"
-							quality={85}
-							priority
-						/>
+          <motion.article
+            className="image-content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 1.5,
+            }}
+          ></motion.article>
+          <div className="location-overlay-box">
+            <h1 className="aero-home-h1heading">{item.title}</h1>
+            <p>{item.smalltext}</p>
 
-						<motion.article
-							className="image-content"
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							transition={{
-								duration: 1.5,
-							}}
-						>
-
-						</motion.article>
-						<div className="location-overlay-box">
-							<h1 className="aero-home-h1heading">{item.title}</h1>
-							<p>{item.smalltext}</p>
-
-							<p>
-								<strong>Phone:</strong>{' '}
-								<a
-									href={toTelHref(locData.phone)}
-									aria-label={`Call AeroSports ${locData.location} at ${locData.phone}`}
-									itemProp="telephone"
-								>
-									{locData.phone}
-								</a>
-							</p>
-							<p><strong>Address:</strong> <a href={locData.gmburl} target="_blank" > {locData.address}</a></p>
-							{waiverLink && (
-								<div className="aero-btn-booknow">
-									<Link href={waiverLink} target="_blank" title="sign your waiver at aerosports trampoline park" >
-										<motion.button
-											className="sigma_btn-custom"
-											animate={{ scale: [1, 1.05, 1] }}
-											transition={{
-												duration: 2,
-												repeat: Infinity,
-												ease: "easeInOut"
-											}}
-										>
-											Sign Waiver
-										</motion.button>
-									</Link>
-								</div>
-							)}
-						</div>
-					</div>
-				</div>
-
-			)}
-		</section>
-	);
+            <p>
+              <strong>Phone:</strong>{" "}
+              <a
+                href={toTelHref(locData.phone)}
+                aria-label={`Call AeroSports ${locData.location} at ${locData.phone}`}
+                itemProp="telephone"
+              >
+                {locData.phone}
+              </a>
+            </p>
+            <p>
+              <strong>Address:</strong>{" "}
+              <a href={locData.gmburl} target="_blank">
+                {" "}
+                {locData.address}
+              </a>
+            </p>
+            {waiverLink && (
+              <div className="aero-btn-booknow">
+                <Link
+                  href={waiverLink}
+                  target="_blank"
+                  title="sign your waiver at aerosports trampoline park"
+                >
+                  <motion.button
+                    className="sigma_btn-custom"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    Sign Waiver
+                  </motion.button>
+                </Link>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default MotionImage;
