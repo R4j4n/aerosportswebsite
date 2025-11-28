@@ -252,13 +252,16 @@ header.navbar-hidden {
 }
 
 .aero-d-changelocation:hover {
-  background: rgba(255, 17, 82, 0.1);
-  border-color: rgba(202, 255, 26, 0.8);
-  box-shadow: 0 6px 20px rgba(255, 17, 82, 0.4),
-    0 0 30px rgba(202, 255, 26, 0.2);
-  transform: translateX(3px);
+ color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 17, 82, 0.25) 0%,
+    rgba(255, 17, 82, 0.6) 100%
+  );
+  box-shadow: 0 0 12px rgba(255, 17, 82, 0.6),
+    0 0 18px rgba(255, 17, 82, 0.45) inset;
+  transform: translateY(-3px) scale(1.07);
 }
-
 .aero-d-changelocation:hover::before {
   left: 100%;
 }
@@ -2099,6 +2102,11 @@ ul.attractions-grid li:nth-child(8) {
   .desktop-container {
     display: block;
   }
+
+  /* .aero-btn-booknow .desktop-container{
+        display: flex;
+    flex-direction: row-reverse;
+  } */
 
   .aero-btn-booknow button {
     font-size: 1.1rem;

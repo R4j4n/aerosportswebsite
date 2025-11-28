@@ -53,16 +53,17 @@ const Category = async ({ params }) => {
 
   return (
     <main>
-      <section className="aero_attractions_wrapper">
-        <section className="aero-max-container">
-          <MotionImage
+      <MotionImage
             pageData={pageData}
             waiverLink={waiverLink}
             locationData={locationData}
           />
+      <section className="aero_attractions_wrapper">
+        <section className="aero-max-container">
+          
 
           {/* Title Section with Gradient and Animations */}
-          <div className="aero_attractions_title_wrapper">
+          {/* <div className="aero_attractions_title_wrapper">
             <div className="aero_attractions_title_content">
               <div className="aero_attractions_title_badge">
                 <span>✨ EXPLORE OUR ATTRACTIONS ✨</span>
@@ -76,27 +77,27 @@ const Category = async ({ params }) => {
                 </p>
               )}
             </div>
-          </div>
+          </div> */}
+        </section>
 
           {/* Attractions Grid with Modal */}
-          <AttractionsGrid
+          {/* <AttractionsGrid
             attractionsData={activeAttractions}
             waiverLink={waiverLink}
             locationSlug={location_slug}
-          />
-        </section>
+          /> */}
 
         {/* SEO Content Section */}
-        <section className="aero_home_article_section">
-          <section className="aero-max-container aero_home_seo_section">
+        {/* <section className="aero_home_article_section"> */}
+          {/* <section className="aero-max-container aero_home_seo_section"> */}
             <div
               dangerouslySetInnerHTML={{ __html: pageData?.section1 || "" }}
             />
             <div
               dangerouslySetInnerHTML={{ __html: pageData?.seosection || "" }}
             />
-          </section>
-        </section>
+          {/* </section> */}
+        {/* </section> */}
       </section>
       <script
         type="application/ld+json"

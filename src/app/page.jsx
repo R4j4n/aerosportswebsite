@@ -40,7 +40,7 @@ export default async function Home() {
                   </div>
 
                   <div className="relative z-20 flex flex-1 flex-col px-5 py-5 md:px-4 md:py-5 lg:px-5 lg:py-6">
-                    <h2 className="mb-3 flex min-h-[2.6em] items-center bg-linear-to-br from-[#ff1152] to-[#caff1a] bg-clip-text text-xl font-extrabold uppercase leading-tight tracking-[0.5px] text-transparent md:text-lg lg:text-lg xl:text-xl 2xl:text-[1.3rem]">
+                    <h2 className="mb-3 flex min-h-[2.6em] items-center bg-gradient-to-br from-[#f00c74] to-[#ff1152] bg-clip-text text-xl font-extrabold uppercase leading-tight tracking-[0.5px] text-transparent md:text-lg lg:text-lg xl:text-xl 2xl:text-[1.3rem]">
                       {card.desc}
                     </h2>
 

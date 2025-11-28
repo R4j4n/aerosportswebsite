@@ -61,7 +61,7 @@ const Header = ({ location_slug, menudata, configdata }) => {
           )}
         </div>
 
-        <div className="aero-btn-booknow desktop-container">
+        <div className="hidden lg:flex lg:flex-row-reverse aero-btn-booknow">
           <Link
             href={`/${location_slug}/contactus`}
             prefetch
@@ -92,20 +92,6 @@ const Header = ({ location_slug, menudata, configdata }) => {
                   {item.navName}
                 </Link>
               ))}
-          </div>
-          <div style={{ position: "relative" }} className="aero-header-changelocation-wrap">
-            <Link href="/" prefetch className="aero-app-changelocation app-container">
-              {location_slug}
-            </Link>
-            <Link
-              href={`/${location_slug}/contactus`}
-              prefetch
-              className="aero-header-contactus-btn aero-app-changelocation app-container"
-              style={{ marginRight: "0" }}
-            >
-              <MdOutlinePermContactCalendar />
-              <span>Inquiry</span>
-            </Link>
           </div>
         </nav>
       </section>
