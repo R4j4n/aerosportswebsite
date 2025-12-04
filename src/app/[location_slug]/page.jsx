@@ -80,11 +80,6 @@ const Home = async ({ params }) => {
         />
       )}
 
-      {/* Plan Your Visit Section - Comprehensive Layout */}
-      {attractionsData?.[0]?.children?.length > 0 && seosection && (
-        <PlanVisitSection seosection={seosection} />
-      )}
-
       {/* Celebrate Your Event Section - Black Background */}
       {attractionsData?.[0]?.children?.length > 0 && (
         <CelebrateSection locationSlug={location_slug} />
@@ -96,6 +91,11 @@ const Home = async ({ params }) => {
           attractions={attractionsData[0]?.children}
           location_slug={location_slug}
         />
+      )}
+
+      {/* Plan Your Visit Section - Bottom CTA Section */}
+      {attractionsData?.[0]?.children?.length > 0 && seosection && (
+        <PlanVisitSection seosection={seosection} locationSlug={location_slug} />
       )}
 
       {/* Statistics Section - Centered Container

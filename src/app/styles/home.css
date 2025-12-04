@@ -2050,8 +2050,9 @@ ul.attractions-grid li:nth-child(8) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Tablet BPJ Section */
+  /* Tablet BPJ Section - Fix 3 column layout */
   .aero_home_BPJ_wrapper {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
     padding: 2.5rem 2rem;
     max-width: 1200px;
@@ -2074,6 +2075,12 @@ ul.attractions-grid li:nth-child(8) {
 
   .aero_home_BPJ_wrapper span {
     font-size: 1.4rem;
+  }
+
+  /* Tablet Footer Links - Fix 3 column layout */
+  .aero_footer_links_section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
   footer .aero_home-headerimg-wrapper {
@@ -2383,6 +2390,64 @@ ul.attractions-grid li:nth-child(8) {
 
   .aero_home_BPJ_wrapper > div:hover span {
     letter-spacing: 2.5px;
+  }
+
+  /* Mobile Header Button Improvements */
+  .aero-d-changelocation,
+  .aero-faq,
+  .aero-btn-book,
+  .sigma_btn-custom,
+  .aero-header-contactus-btn {
+    padding: 0.6em 1.2em;
+    height: 44px;
+    font-size: 0.8rem;
+    min-width: 44px;
+  }
+
+  .aero-list-7 a {
+    padding: 0.5em 1em;
+    font-size: 0.75rem;
+  }
+
+  /* Hero Section Mobile Improvements */
+  .location-overlay-box {
+    padding: 1.5em 2em;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    max-width: calc(100% - 2em);
+  }
+
+  .location-overlay-box h1 {
+    font-size: 1.2rem;
+  }
+
+  .location-overlay-box p {
+    font-size: 0.85rem;
+  }
+
+  /* Attractions Section Mobile Improvements */
+  .aero_attractions_title_wrapper {
+    border-radius: 16px;
+    margin: 0 1em 2em;
+  }
+
+  .aero_attractions_title_content {
+    padding: 24px 16px;
+  }
+
+  .aero_attractions_gradient_title {
+    font-size: 1.6rem;
+  }
+
+  .aero_attractions_description {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+
+  /* Hero Section Top Padding - Reduced for mobile */
+  .aero_home-headerimg-wrapper article {
+    top: 35%;
   }
 }
 

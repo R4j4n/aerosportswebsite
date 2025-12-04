@@ -1,15 +1,19 @@
-const PlanVisitSection = ({ seosection }) => {
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const PlanVisitSection = ({ seosection, locationSlug }) => {
 	if (!seosection) return null;
 
 	return (
 		<section style={styles.planVisitSection}>
+			{/* Responsive diagonal background with clip-path */}
 			<div style={styles.planVisitDiagonalBg}></div>
 
 			<div style={styles.planContentWrapper}>
 				{/* Section Header */}
 				<div style={styles.planHeader}>
 					<div style={styles.planBadge}>
-						<span>Plan Your Visit</span>
+						<span>✨ Plan Your Visit</span>
 					</div>
 					<h2 style={styles.planTitle}>
 						Ready For
@@ -22,6 +26,17 @@ const PlanVisitSection = ({ seosection }) => {
 						unforgettable kids&apos; birthday party, a family outing, or an
 						exciting group event.
 					</p>
+
+					<div style={styles.planButtonGroup}>
+						<Button variant="accent" size="md" asChild>
+							<Link href={`/${locationSlug}/pricing-promos`}>View Pricing & Promos</Link>
+						</Button>
+						<Button variant="accentOutline" size="md" asChild>
+							<a href="https://ecom.roller.app/aerosportsoakvillemississauga/products/en/home">
+								Buy Your Tickets
+							</a>
+						</Button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -75,6 +90,9 @@ const styles = {
 		lineHeight: "0.95",
 		marginBottom: "1.5rem",
 		color: "#ffffff",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
+		MozOsxFontSmoothing: "grayscale",
 	},
 	planTitleAccent: {
 		color: "#39FF14",
@@ -83,6 +101,15 @@ const styles = {
 		fontSize: "1.1rem",
 		color: "rgba(255, 255, 255, 0.8)",
 		lineHeight: "1.7",
+		fontWeight: "700",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
+		marginBottom: "2rem",
+	},
+	planButtonGroup: {
+		display: "flex",
+		gap: "1rem",
+		flexWrap: "wrap",
 	},
 };
 

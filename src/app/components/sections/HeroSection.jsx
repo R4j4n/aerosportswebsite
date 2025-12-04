@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = ({ headerImage, waiverLink, locationData }) => {
   return (
-    <section className="relative flex justify-center items-center pt-[200px] w-full min-h-screen overflow-hidden">
+    <section className="relative flex justify-center items-center pt-20 sm:pt-30 md:pt-40 lg:pt-50 w-full min-h-screen overflow-hidden">
       {/* Background Motion Image */}
 
       <MotionImage
@@ -13,7 +13,7 @@ const HeroSection = ({ headerImage, waiverLink, locationData }) => {
       />
 
       {/* Overlay */}
-      <div className="z-20 absolute inset-0 flex justify-center items-center bg-gradient-to-br from-black/50 to-black/60 px-6 pt-[200px]">
+      <div className="z-20 absolute inset-0 flex justify-center items-center bg-gradient-to-br from-black/50 to-black/60 px-6 pt-20 sm:pt-30 md:pt-40 lg:pt-50">
         <div className="max-w-7xl text-center animate-[fadeInUp_1s_ease-out]">
           {/* Badge */}
           <div className="inline-block mb-10 px-7 py-3 border-[#39FF14] border-2 rounded-full font-bold text-[#39FF14] text-[0.85rem] uppercase tracking-wide animate-[scaleIn_0.8s_ease-out]">

@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-
+import "../../styles/seo-section.css";
 
 const SEOSection = ({ locationData, locationSlug, estoreConfig, seosection }) => {
 	console.log({ seosection })
@@ -9,9 +7,10 @@ const SEOSection = ({ locationData, locationSlug, estoreConfig, seosection }) =>
 
 	return (
 		<section style={styles.seoSection}>
-			<div style={styles.diagonalBg}></div>
+			{/* <div style={styles.diagonalBg} ></div> */}
+			<div style={styles.diagonalBgLeft} className="seo-diagonal-bg-left"></div>
 
-			<section style={styles.seoContainer}>
+			<section style={styles.seoContainer} className="gap-6 md:gap-10 grid grid-cols-1 md:grid-cols-2">
 				{/* Left Side - Content */}
 				<div style={styles.seoLeft}>
 					<div style={styles.seoContent}>
@@ -48,17 +47,6 @@ const SEOSection = ({ locationData, locationSlug, estoreConfig, seosection }) =>
 							and an exciting{" "}
 							<strong style={styles.seoHighlight}>dodgeball arena</strong>.
 						</p>
-					</div>
-
-					<div style={styles.seoButtonGroup}>
-						<Button variant="accent" size="md" asChild>
-							<Link href="/oakville/pricing-promos">View Pricing & Promos</Link>
-						</Button>
-						<Button variant="accentOutline" size="md" asChild>
-							<a href="https://ecom.roller.app/aerosportsoakvillemississauga/products/en/home">
-								Buy Your Tickets
-							</a>
-						</Button>
 					</div>
 				</div>
 
@@ -110,16 +98,24 @@ const styles = {
 		right: 0,
 		width: "55%",
 		height: "100%",
-		background: "linear-gradient(135deg, #ff1152 0%, #ff4d7d 100%)",
-		clipPath: "polygon(0 0, 100% 0, 100% 100%, 100% 100%)",
+		background: "linear-gradient(135deg, #ff1152 0%, #ff0066 50%, #cc0052 100%)",
+		clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
 		zIndex: 0,
+	},
+	diagonalBgLeft: {
+		position: "absolute",
+		bottom: 0,
+		left: 0,
+		width: "45%",
+		height: "100%",
+		background: "linear-gradient(315deg, #ff1152 0%, #ff0066 50%, #cc0052 100%)",
+		clipPath: "polygon(0 0, 100% 100%, 0 100%)",
+		zIndex: 0,
+		opacity: 0.25,
 	},
 	seoContainer: {
 		position: "relative",
 		zIndex: 1,
-		display: "grid",
-		gridTemplateColumns: "1fr 1fr",
-		gap: "4rem",
 		maxWidth: "1400px",
 		margin: "0 auto",
 		padding: "6rem 2rem",
@@ -156,6 +152,9 @@ const styles = {
 		lineHeight: "1.1",
 		marginBottom: "1.5rem",
 		color: "#ffffff",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
+		MozOsxFontSmoothing: "grayscale",
 	},
 	seoTitleAccent: {
 		color: "#ff1152",
@@ -164,6 +163,9 @@ const styles = {
 		fontSize: "1.1rem",
 		color: "#e0e0e0",
 		lineHeight: "1.8",
+		fontWeight: "700",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
 	},
 	seoCard: {
 		background: "rgba(255, 255, 255, 0.95)",
@@ -177,6 +179,9 @@ const styles = {
 		fontSize: "1rem",
 		lineHeight: "1.8",
 		color: "#000000",
+		fontWeight: "600",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
 	},
 	seoHighlight: {
 		color: "#ff1152",
@@ -225,6 +230,9 @@ const styles = {
 		marginBottom: "1.5rem",
 		textTransform: "uppercase",
 		letterSpacing: "1px",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
+		MozOsxFontSmoothing: "grayscale",
 	},
 	mapContainer: {
 		marginBottom: "1.5rem",
@@ -238,11 +246,17 @@ const styles = {
 		fontSize: "1.1rem",
 		color: "#ff1152",
 		marginBottom: "0.5rem",
+		fontWeight: "800",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
 	},
 	locationDescription: {
 		fontSize: "0.95rem",
 		color: "#666666",
 		lineHeight: "1.6",
+		fontWeight: "600",
+		textRendering: "geometricPrecision",
+		WebkitFontSmoothing: "antialiased",
 	},
 };
 
