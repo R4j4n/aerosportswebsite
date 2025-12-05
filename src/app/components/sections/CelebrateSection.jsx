@@ -2,49 +2,33 @@ import "../../styles/attractions.css";
 import Link from "next/link";
 
 const CelebrateSection = ({ locationSlug }) => {
+	const eventsList = [
+  {
+    title: "Team Building",
+    image:
+      "https://storage.googleapis.com/aerosports/team-building-aerosports-trampoline-park.png",
+    text: "Promote collaboration and problem-solving with our engaging team-based attractions.",
+    href: "groups-events/corporate-parties-events-groups",
+  },
+  {
+    title: "Birthday Parties",
+    image:
+      "https://storage.googleapis.com/aerosports/celeberate-your-birthday-parties-at-aerosports.png",
+    text: "All-inclusive packages with private room, host, pizza, and open-jump access.",
+    href: "kids-birthday-parties",
+  },
+  {
+    title: "Field Trips",
+    image:
+      "https://storage.googleapis.com/aerosports/schools-field-trips-at-aerosports.png",
+    text: "Special group rates for schools and educational organizations.",
+    href: "groups-events/school-groups",
+  },
+	];
+	
 	return (
 		<>
-			<style>{`
-				.eventCardBody > a {
-					align-self: flex-start !important;
-					width: auto !important;
-				}
-
-				.eventCard .aero_attraction_card_cta {
-					display: inline-block !important;
-					width: auto !important;
-					align-self: flex-start !important;
-					transition: all 0.3s ease !important;
-				}
-
-				.eventCard .aero_attraction_card_cta:hover {
-					border: 3px solid #39FF14 !important;
-					box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.5), 0 0 20px rgba(57, 255, 20, 0.8) !important;
-					transform: translateX(5px) !important;
-				}
-
-				.eventCard:hover .aero_attraction_card_cta {
-					border: 3px solid #39FF14 !important;
-					box-shadow: 0 6px 20px rgba(255, 17, 82, 0.5), 0 0 30px rgba(202, 255, 26, 0.5), 0 0 20px rgba(57, 255, 20, 0.8) !important;
-					transform: translateX(5px) !important;
-				}
-
-				.eventCard:hover .aero_attraction_card_cta::before {
-					left: 100%;
-				}
-
-				.eventCard {
-					transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-					border: 2px solid #39FF14 !important;
-					position: relative;
-				}
-
-				.eventCard:hover {
-					transform: translateY(-8px) !important;
-					border: 2px solid #39FF14 !important;
-					box-shadow: 0 20px 50px rgba(255, 17, 82, 0.5), 0 0 60px rgba(202, 255, 26, 0.4), inset 0 0 40px rgba(57, 255, 20, 0.15) !important;
-				}
-			`}</style>
+			
 			<section style={styles.celebrateSection}>
 			<div style={styles.celebrateContainer} >
 				{/* Section Header */}
@@ -64,97 +48,35 @@ const CelebrateSection = ({ locationSlug }) => {
 				{/* Events Grid */}
 				<div
 				style={styles.celebrateGrid}
-				className="gap-6 sm:gap-8 md:gap-10 lg:gap-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-			>
-					{/* Team Building */}
-					<article style={styles.eventCard} className="h-full">
+						className="gap-6 sm:gap-8 md:gap-10 lg:gap-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+						{eventsList.map(event => <article className="flex flex-col shadow-[0_15px_50px_rgba(0,0,0,0.4)] hover:shadow-neon-pink-lg border-2 border-white hover:border-neon-pink-light rounded-xl h-full overflow-hidden transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)]">
 						<div
 							style={{
-								...styles.eventCardImage,
-								backgroundImage:
-									"url('https://storage.googleapis.com/aerosports/team-building-aerosports-trampoline-park.png')",
-								height: "150px",
+								backgroundImage: `url('${event.image}')`,
 							}}
-							className="sm:h-56 md:h-[200px] event-card-image"
+							className="relative flex justify-start items-end bg-cover bg-center p-4 w-full h-[200px] sm:h-56 md:h-[200px] event-card-image hover:"
 							role="img"
-							aria-label="Team Building Events"
-						>
-							<h3 style={styles.eventCardTitle} className="text-sm sm:text-base md:text-xl">Team Building</h3>
+							aria-label={event.title}
+							>
+							<h3 className="[webkit-font-smoothing:antialiased] font-black text-[1.3rem] text-white sm:text-base md:text-xl uppercase leading-[1.2] tracking-[1.2px] [text-shadow:0_2px_8px_rgba(0,0,0,0.3)] [text-rendering:geometricPrecision]">
+								{event.title}
+							</h3>
 						</div>
 						<div style={styles.eventCardBody} className="p-4 sm:p-5 md:p-8">
 							<p style={styles.eventCardText}>
-								Promote collaboration and problem-solving with our engaging
-								team-based attractions.
+								{event.text}
 							</p>
 							<Link
-								href={`/${locationSlug}/groups-events/corporate-parties-events-groups`}
+								href={`/${locationSlug}/${event.href}`}
 								className="aero_attraction_card_cta"
 								style={{ width: "fit-content" }}
 							>
 								More Info
 							</Link>
 						</div>
-					</article>
+					</article>)}
 
-					{/* Birthday Parties */}
-					<article style={styles.eventCard} className="h-full">
-						<div
-							style={{
-								...styles.eventCardImage,
-								backgroundImage:
-									"url('https://storage.googleapis.com/aerosports/celeberate-your-birthday-parties-at-aerosports.png')",
-								height: "150px",
-							}}
-							className="sm:h-56 md:h-[200px] event-card-image"
-							role="img"
-							aria-label="Birthday Parties"
-						>
-							<h3 style={styles.eventCardTitle} className="text-sm sm:text-base md:text-xl">Birthday Parties</h3>
-						</div>
-						<div style={styles.eventCardBody} className="p-4 sm:p-5 md:p-8">
-							<p style={styles.eventCardText}>
-								All-inclusive packages with private room, host, pizza, and
-								open-jump access.
-							</p>
-							<Link
-								href={`/${locationSlug}/kids-birthday-parties`}
-								className="aero_attraction_card_cta"
-								style={{ width: "fit-content" }}
-							>
-								More Info
-							</Link>
-						</div>
-					</article>
-
-					{/* Field Trips */}
-					<article style={styles.eventCard} className="h-full">
-						<div
-							style={{
-								...styles.eventCardImage,
-								backgroundImage:
-									"url('https://storage.googleapis.com/aerosports/schools-field-trips-at-aerosports.png')",
-								height: "150px",
-							}}
-							className="sm:h-56 md:h-[200px] event-card-image"
-							role="img"
-							aria-label="Field Trips"
-						>
-							<h3 style={styles.eventCardTitle} className="text-sm sm:text-base md:text-xl">Field Trips</h3>
-						</div>
-						<div style={styles.eventCardBody} className="p-4 sm:p-5 md:p-8">
-							<p style={styles.eventCardText}>
-								Special group rates for schools and educational
-								organizations.
-							</p>
-							<Link
-								href={`/${locationSlug}/groups-events/school-groups`}
-								className="aero_attraction_card_cta"
-								style={{ width: "fit-content" }}
-							>
-								More Info
-							</Link>
-						</div>
-					</article>
+						
 				</div>
 			</div>
 		</section>

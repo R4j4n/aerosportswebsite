@@ -56,8 +56,8 @@ const styles = {
 		left: 0,
 		right: 0,
 		height: "25rem",
-		background: "linear-gradient(135deg, #ff1152 0%, #ff4d7d 100%)",
-		clipPath: "polygon(0 0, 100% 0, 70% 100%, 0% 100%)",
+		// background: "linear-gradient(135deg, #ff1152 0%, #ff4d7d 100%)",
+		// clipPath: "polygon(0 0, 100% 0, 70% 100%, 0% 100%)",
 		zIndex: 0,
 	},
 	planContentWrapper: {

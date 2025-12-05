@@ -3,12 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export default function ExploreAttractionsSection({ attractions, location_slug }) {
 	const [currentPage, setCurrentPage] = useState(0);
 	const [hoveredIndex, setHoveredIndex] = useState(null);
 	const [isVisible, setIsVisible] = useState(false);
+	const [itemsPerPage, setItemsPerPage] = useState(6);
 	const sectionRef = useRef(null);
 
 	useEffect(() => {
@@ -24,7 +26,32 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 		return () => observer.disconnect();
 	}, []);
 
-	const itemsPerPage = 6;
+	useEffect(() => {
+		const updateItemsPerPage = () => {
+			if (window.innerWidth < 640) { 
+				setItemsPerPage(1); // Mobile: 2x1
+				setCurrentPage(0); // Reset to first page on resize
+			} else if (window.innerWidth < 1024) { //lg
+				setItemsPerPage(2); // Tablet: 2x1
+				setCurrentPage(0);
+			} else if (window.innerWidth < 1280) { //xl
+				setItemsPerPage(2); // Tablet: 2x1
+				setCurrentPage(0);
+			} else if (window.innerWidth < 1536) { //2xl
+				setItemsPerPage(4); // Tablet: 2x1
+				setCurrentPage(0);
+			}
+			else {
+				setItemsPerPage(6); // Desktop: 3x2
+				setCurrentPage(0);
+			}
+		};
+
+		updateItemsPerPage();
+		window.addEventListener('resize', updateItemsPerPage);
+		return () => window.removeEventListener('resize', updateItemsPerPage);
+	}, []);
+
 	const totalPages = Math.ceil(attractions?.length / itemsPerPage) || 1;
 	const startIndex = currentPage * itemsPerPage;
 	const visibleAttractions = attractions?.slice(startIndex, startIndex + itemsPerPage) || [];
@@ -32,60 +59,65 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 	const handlePrevious = () => setCurrentPage(prev => prev === 0 ? totalPages - 1 : prev - 1);
 	const handleNext = () => setCurrentPage(prev => prev === totalPages - 1 ? 0 : prev + 1);
 
+	// Pagination component
+	const PaginationControls = ({ className }) => (
+		totalPages > 1 && (
+			<div className={cn("flex items-center gap-6", className)}>
+				<button onClick={handlePrevious}
+					className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
+					←
+				</button>
+
+				<span className="font-semibold text-white text-lg">
+					{currentPage + 1} / {totalPages}
+				</span>
+
+				<button onClick={handleNext}
+					className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
+					→
+				</button>
+			</div>
+		)
+	);
+
 	return (
 		<section
 			ref={sectionRef}
-			className={`relative overflow-hidden bg-black py-32 transition-opacity duration-700
-      ${isVisible ? "opacity-100" : "opacity-0"}`}
+			className={cn(
+				"relative bg-black py-16 sm:py-24 lg:py-32 overflow-hidden transition-opacity duration-700",
+				isVisible ? "opacity-100" : "opacity-0"
+			)}
 		>
 			{/* Animated BG */}
-			<div className="absolute inset-0 bg-gradient-to-br from-[#ff1152] via-[#ff1152] to-[#ff4d7d] [clip-path:polygon(100%_0,100%_100%,80%_100%,0_0)]" />
+			{/* <div className="absolute inset-0 bg-gradient-to-br from-[#ff1152] via-[#ff1152] to-[#ff4d7d] [clip-path:polygon(100%_0,100%_100%,80%_100%,0_0)]" /> */}
 
-			<div className="z-10 relative mx-auto px-10 lg:px-16 max-w-[1400px]">
-				<div className="items-start gap-16 grid grid-cols-[0.8fr_1.5fr]">
+			<div className="z-10 relative mx-auto px-6 sm:px-10 lg:px-16 max-w-[1400px]">
+				<div className="flex flex-col items-start gap-8 lg:gap-16 lg:grid lg:grid-cols-[0.8fr_1.5fr]">
 
 					{/* LEFT */}
-					<div className="flex flex-col justify-center gap-8">
+					<div className="flex flex-col justify-center gap-6 lg:gap-8 w-full lg:w-auto">
 						<div className="bg-[#39FF14] px-6 py-2 rounded-full w-fit font-semibold text-black text-xs uppercase tracking-wider">
 							Discover
 						</div>
 
-						<h2 className="font-black text-white text-5xl lg:text-6xl uppercase leading-tight">
+						<h2 className="font-black text-white text-4xl sm:text-5xl lg:text-6xl uppercase leading-tight">
 							Explore <br />
 							<span className="text-[#ff1152]">Our</span> Attractions
 						</h2>
 
-						{/* Pagination */}
-						{totalPages > 1 && (
-							<div className="flex items-center gap-6">
-								<button onClick={handlePrevious}
-									className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
-									←
-								</button>
-
-								<span className="font-semibold text-white text-lg">
-									{currentPage + 1} / {totalPages}
-								</span>
-
-								<button onClick={handleNext}
-									className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
-									→
-								</button>
-							</div>
-						)}
+						{/* Pagination - Desktop only */}
+						<PaginationControls className="hidden lg:flex" />
 
 						<Button variant="neonGreen" size="full" rounded="md" asChild>
 							<Link href={`/${location_slug}/attractions`}>
 								All Attractions →
 							</Link>
 						</Button>
-
 					</div>
 
 					{/* RIGHT GRID */}
-					<div className="flex">
-						<div className="gap-8 grid grid-cols-3 w-full">
-
+					<div className="flex flex-col gap-8 w-full">
+						<div className="gap-4 sm:gap-6 grid grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 xl:grid-cols-2 w-full">
 							{visibleAttractions.map((attraction, index) => {
 								const cardIndex = startIndex + index;
 								const isHovered = hoveredIndex === cardIndex;
@@ -94,13 +126,13 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 									<div key={cardIndex}
 										onMouseEnter={() => setHoveredIndex(cardIndex)}
 										onMouseLeave={() => setHoveredIndex(null)}
-										className={`
-                        flex flex-col items-center text-center overflow-hidden transition-all
-                        bg-white ${isHovered && "bg-[#39FF14]"}
-                        ${isVisible ? `animate-[slideUp_.6s_ease-out_${index * 0.1}s_backwards]` : ""}
-                      `}
+										className={cn(
+											"flex flex-col items-center bg-white overflow-hidden text-center transition-all",
+											isHovered && "bg-neon-pink",
+											isVisible && `animate-[slideUp_.6s_ease-out_${index * 0.1}s_backwards]`
+										)}
 									>
-										<div className="flex justify-center items-center bg-white/5 w-[250px] h-[250px] overflow-hidden">
+										<div className="flex justify-center items-center bg-white/5 w-full aspect-square sm:aspect-4/3 lg:aspect-video overflow-hidden">
 											{attraction?.smallimage && (
 												<Image
 													src={attraction.smallimage}
@@ -112,27 +144,23 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 											)}
 										</div>
 
-										<h3 className={`w-full text-black font-semibold text-sm uppercase tracking-wide p-4 transition ${isHovered && "bg-[#39FF14]"}`}>
+										<h3 className={cn(
+											"p-3 sm:p-4 w-full font-semibold text-black text-xs sm:text-sm uppercase tracking-wide transition",
+											isHovered && "bg-neon-pink"
+										)}>
 											{(attraction?.name || attraction?.title || "Attraction").split(" - ").pop()}
 										</h3>
 									</div>
 								);
 							})}
-
 						</div>
+
+						{/* Pagination - Mobile and Tablet only */}
+						<PaginationControls className="lg:hidden flex justify-center" />
 					</div>
 
 				</div>
 			</div>
-
-			{/* Keep keyframes OR move to tailwind.config.js */}
-			{/* <style>{`
-         @keyframes slideUp {
-           from { opacity: 0; transform: translateY(30px); }
-           to { opacity: 1; transform: translateY(0); }
-         }
-      `}</style> */}
 		</section>
 	);
 }
-;

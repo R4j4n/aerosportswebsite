@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import "../../styles/kidsparty.css";
 import "../../styles/subcategory.css";
+import BirthdayPartySection from "@/components/sections/BirthdayPartySection";
 import { fetchsheetdata, fetchPageData, generateMetadataLib, fetchMenuData, getWaiverLink, generateSchema, fetchBirthdayPartyJson } from "@/lib/sheets";
 import MotionImage from "@/components/MotionImage";
 export async function generateMetadata({ params }) {
@@ -25,8 +26,20 @@ const Page = async ({ params }) => {
 	]);
 	const attractions = menudata?.filter((item) => item.path == "attractions")[0];
 	const jsonLDschema = await generateSchema(data, locationData, '', "kids-birthday-parties");
+	const pageData = data;
+		 const locData = locationData[0];
+  const toTelHref = (phone) => {
+    const digits = (phone || "").replace(/\D/g, "");
+    if (!digits) return "tel:";
+    // North America: add +1 if missing, keep leading 1 if present
+    const e164 =
+      digits.length === 11 && digits.startsWith("1")
+        ? `+${digits}`
+        : `+1${digits}`;
+    return `tel:${e164}`;
+  };
 	return (
-		<main >
+		<main>
 
 			<MotionImage pageData={data} waiverLink={waiverLink} locationData={locationData} />
 
@@ -52,7 +65,7 @@ const Page = async ({ params }) => {
 					<div className="aero_bp_star_decoration aero_bp_star_4">★</div>
 				</div>
 
-				<section className="aero-max-container">
+				{/* <section className="aero-max-container"> */}
 
 					{/* Animated Title Section */}
 					<div className="aero_bp_title_wrapper">
@@ -188,6 +201,7 @@ const Page = async ({ params }) => {
 												</React.Fragment>
 											))}
 										</div>
+	
 									);
 								})()}
 							</div>
@@ -215,8 +229,49 @@ const Page = async ({ params }) => {
 							})}
 						</article>
 					)}
-				</section>
+{/* <BirthdayPartySection locationData={locationData}></BirthdayPartySection> */}
+<div
+              dangerouslySetInnerHTML={{ __html: pageData?.section1 || "" }}
+            />
+            <div
+              dangerouslySetInnerHTML={{ __html: pageData?.seosection || "" }}
+            />
+				{/* </section> */}
+
+				{/* Planning & Contact Section */}
+				
+				<div className="mb-16">
+					<h3 className="mb-6 [-webkit-font-smoothing:antialiased] font-black text-[clamp(1.8rem,5vw,2.5rem)] text-white text-center uppercase [text-rendering:geometricPrecision]">
+						Plan Your Birthday Celebration Today!
+					</h3>
+
+					<p className="mx-auto mb-8 max-w-[900px] font-semibold text-white/80 text-lg text-center leading-relaxed">
+						Planning a birthday celebration at AeroSports is easy! Choose your package and let our event planners handle the details. With various options tailored to different age groups, we ensure every child has a fantastic time.
+					</p>
+
+					<div className="gap-6 sm:gap-8 grid grid-cols-1 sm:grid-cols-2 mt-8">
+						{/* Contact Info */}
+						<div className="bg-white/5 shadow-[0_15px_50px_rgba(0,0,0,0.4)] p-8 border-2 border-white/10 rounded-2xl text-center">
+							<div className="mb-4 text-5xl">📞</div>
+							<h4 className="mb-4 font-black text-white text-xl uppercase tracking-wide">Contact Us</h4>
+							<p className="mb-2 font-bold text-neon-pink text-2xl">{locData.phone}</p>
+							<p className="font-semibold text-white/60 text-sm">Call us directly to book your event!</p>
+						</div>
+
+						{/* Location */}
+						<div className="bg-white/5 shadow-[0_15px_50px_rgba(0,0,0,0.4)] p-8 border-2 border-white/10 rounded-2xl text-center">
+							<div className="mb-4 text-5xl">📍</div>
+							<h4 className="mb-4 font-black text-white text-xl uppercase tracking-wide">Find Us At</h4>
+							<p className="font-semibold text-neon-green text-lg leading-relaxed">{locData.address}</p>
+						</div>
+					</div>
+				</div>
 			</section>
+			  <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: jsonLDschema }}
+      />
 		</main>
 	);
 };

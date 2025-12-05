@@ -63,7 +63,7 @@ const Category = async ({ params }) => {
           
 
           {/* Title Section with Gradient and Animations */}
-          <div className="aero_attractions_title_wrapper">
+          {/* <div className="aero_attractions_title_wrapper">
             <div className="aero_attractions_title_content">
               <div className="aero_attractions_title_badge">
                 <span>✨ EXPLORE OUR ATTRACTIONS ✨</span>
@@ -77,7 +77,7 @@ const Category = async ({ params }) => {
                 </p>
               )}
             </div>
-          </div>
+          </div> */}
         </section>
 
           {/* Attractions Grid with Modal */}

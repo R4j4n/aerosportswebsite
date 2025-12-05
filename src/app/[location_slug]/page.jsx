@@ -129,7 +129,6 @@ const styles = {
   main: {
     backgroundColor: "#000000",
     color: "#ffffff",
-    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     lineHeight: "1.6",
     overflow: "hidden",
     margin: 0,
