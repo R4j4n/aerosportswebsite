@@ -89,7 +89,7 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 			)}
 		>
 			{/* Animated BG */}
-			{/* <div className="absolute inset-0 bg-gradient-to-br from-[#ff1152] via-[#ff1152] to-[#ff4d7d] [clip-path:polygon(100%_0,100%_100%,80%_100%,0_0)]" /> */}
+			<div className="absolute inset-0 bg-gradient-to-br from-[#ff1152] via-[#ff1152] to-[#ff4d7d] [clip-path:polygon(100%_0,100%_100%,80%_100%,0_0)]" />
 
 			<div className="z-10 relative mx-auto px-6 sm:px-10 lg:px-16 max-w-[1400px]">
 				<div className="flex flex-col items-start gap-8 lg:gap-16 lg:grid lg:grid-cols-[0.8fr_1.5fr]">

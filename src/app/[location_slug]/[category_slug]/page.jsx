@@ -54,7 +54,7 @@ const Category = async ({ params }) => {
   return (
     <main>
       <MotionImage
-            pageData={pageData}
+            pageData={{...pageData,video:null}}
             waiverLink={waiverLink}
             locationData={locationData}
           />

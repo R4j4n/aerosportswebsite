@@ -7,7 +7,7 @@ const SEOSection = ({ locationData, locationSlug, estoreConfig, seosection }) =>
 
 	return (
 		<section style={styles.seoSection}>
-			{/* <div style={styles.diagonalBg} ></div> */}
+			<div style={styles.diagonalBg} ></div>
 			<div style={styles.diagonalBgLeft} className="seo-diagonal-bg-left"></div>
 
 			<section style={styles.seoContainer} className="gap-6 md:gap-10 grid grid-cols-1 md:grid-cols-2">
@@ -99,7 +99,7 @@ const styles = {
 		width: "55%",
 		height: "100%",
 		background: "linear-gradient(135deg, #ff1152 0%, #ff0066 50%, #cc0052 100%)",
-		// clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
+		clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
 		zIndex: 0,
 	},
 	diagonalBgLeft: {
