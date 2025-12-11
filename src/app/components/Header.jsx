@@ -93,10 +93,10 @@ const Header = ({ location_slug, menudata, configdata, pricingData }) => {
                 </Link>
               ))}
             <Link
-              href={`/${location_slug}/pricing-table`}
+              href={`/${location_slug}/pricing-promos`}
               prefetch
             >
-              Pricing Table
+              Pricing & Promos
             </Link>
             <Link
               href={`/${location_slug}/gallery`}

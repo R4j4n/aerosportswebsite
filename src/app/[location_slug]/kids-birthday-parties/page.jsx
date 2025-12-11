@@ -46,25 +46,6 @@ const Page = async ({ params }) => {
 
 			<section className="subcategory_main_section-bg aero_bp_main_bg">
 
-				{/* Decorative Background Graphics */}
-				<div className="aero_bp_decorative_bg">
-					<div className="aero_bp_confetti aero_bp_confetti_1"></div>
-					<div className="aero_bp_confetti aero_bp_confetti_2"></div>
-					<div className="aero_bp_confetti aero_bp_confetti_3"></div>
-					<div className="aero_bp_confetti aero_bp_confetti_4"></div>
-					<div className="aero_bp_confetti aero_bp_confetti_5"></div>
-					<div className="aero_bp_confetti aero_bp_confetti_6"></div>
-
-					<div className="aero_bp_circle_decoration aero_bp_circle_1"></div>
-					<div className="aero_bp_circle_decoration aero_bp_circle_2"></div>
-					<div className="aero_bp_circle_decoration aero_bp_circle_3"></div>
-
-					<div className="aero_bp_star_decoration aero_bp_star_1">★</div>
-					<div className="aero_bp_star_decoration aero_bp_star_2">★</div>
-					<div className="aero_bp_star_decoration aero_bp_star_3">★</div>
-					<div className="aero_bp_star_decoration aero_bp_star_4">★</div>
-				</div>
-
 				{/* <section className="aero-max-container"> */}
 
 					{/* Animated Title Section */}

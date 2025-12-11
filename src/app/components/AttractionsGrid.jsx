@@ -6,24 +6,6 @@ import "../styles/attractions.css";
 const AttractionsGrid = ({ attractionsData, waiverLink, locationSlug }) => {
   return (
     <>
-      {/* Decorative Background Elements */}
-      <div className="aero_attractions_decorative_bg">
-        <div className="aero_attractions_confetti aero_attractions_confetti_1"></div>
-        <div className="aero_attractions_confetti aero_attractions_confetti_2"></div>
-        <div className="aero_attractions_confetti aero_attractions_confetti_3"></div>
-        <div className="aero_attractions_confetti aero_attractions_confetti_4"></div>
-        <div className="aero_attractions_confetti aero_attractions_confetti_5"></div>
-
-        <div className="aero_attractions_circle aero_attractions_circle_1"></div>
-        <div className="aero_attractions_circle aero_attractions_circle_2"></div>
-        <div className="aero_attractions_circle aero_attractions_circle_3"></div>
-
-        <div className="aero_attractions_star aero_attractions_star_1">✨</div>
-        <div className="aero_attractions_star aero_attractions_star_2">⭐</div>
-        <div className="aero_attractions_star aero_attractions_star_3">✨</div>
-        <div className="aero_attractions_star aero_attractions_star_4">⭐</div>
-      </div>
-
       {/* Attractions Grid */}
       {/* <div className="aero_attractions_grid">
         {attractionsData?.map((item, i) => (

@@ -1,9 +1,7 @@
 import React from "react";
 import "../../styles/subcategory.css";
 import "../../styles/kidsparty.css";
-import MotionImage from "@/components/MotionImage";
-
-import { getWaiverLink, fetchPageData, generateMetadataLib, generateSchema, fetchPricingTableData } from "@/lib/sheets";
+import { generateMetadataLib, generateSchema, fetchPricingTableData, fetchPageData } from "@/lib/sheets";
 
 export async function generateMetadata({ params }) {
   const metadata = await generateMetadataLib({
@@ -11,19 +9,22 @@ export async function generateMetadata({ params }) {
     category: '',
     page: 'pricing-promos'
   });
-  return metadata;
+
+  // Customize the metadata for the pricing page
+  return {
+    ...metadata,
+    title: `Pricing & Promos - ${params.location_slug} | AeroSports`,
+    description: `View our pricing and promotions for ${params.location_slug} location. Compare packages and find the best deal for your adventure.`,
+  };
 }
 
 const page = async ({ params }) => {
   const { location_slug } = params;
-  const [memberData, waiverLink, locationData, pricingData] = await Promise.all([
-    fetchPageData(location_slug, 'pricing-promos'),
-    getWaiverLink(location_slug),
-    fetchPageData(location_slug, 'home'),
-    fetchPricingTableData(location_slug),
-  ]);
 
-  const jsonLDschema = await generateSchema(memberData, locationData, '', 'pricing-promos');
+  const [pricingData, locationData] = await Promise.all([
+    fetchPricingTableData(location_slug),
+    fetchPageData(location_slug, 'home'),
+  ]);
 
   // Safely prepare header and footer HTML - ensure they're always strings
   let headerHTML = '';
@@ -39,30 +40,7 @@ const page = async ({ params }) => {
 
   return (
     <main>
-      <section>
-        <MotionImage pageData={memberData} waiverLink={waiverLink} locationData={locationData} />
-      </section>
-
       <section className="subcategory_main_section-bg aero_bp_main_bg">
-        {/* Decorative Background Graphics */}
-        <div className="aero_bp_decorative_bg">
-          <div className="aero_bp_confetti aero_bp_confetti_1"></div>
-          <div className="aero_bp_confetti aero_bp_confetti_2"></div>
-          <div className="aero_bp_confetti aero_bp_confetti_3"></div>
-          <div className="aero_bp_confetti aero_bp_confetti_4"></div>
-          <div className="aero_bp_confetti aero_bp_confetti_5"></div>
-          <div className="aero_bp_confetti aero_bp_confetti_6"></div>
-
-          <div className="aero_bp_circle_decoration aero_bp_circle_1"></div>
-          <div className="aero_bp_circle_decoration aero_bp_circle_2"></div>
-          <div className="aero_bp_circle_decoration aero_bp_circle_3"></div>
-
-          <div className="aero_bp_star_decoration aero_bp_star_1">★</div>
-          <div className="aero_bp_star_decoration aero_bp_star_2">★</div>
-          <div className="aero_bp_star_decoration aero_bp_star_3">★</div>
-          <div className="aero_bp_star_decoration aero_bp_star_4">★</div>
-        </div>
-
         <section className="aero-max-container">
           {/* Header Section */}
           {headerHTML && (
@@ -96,7 +74,7 @@ const page = async ({ params }) => {
             <article className="aero_bp_pricing_table_wrapper">
               <div className="aero_bp_section_header">
                 <div className="aero_bp_section_icon">🎯</div>
-                <h3 className="aero_bp_section_title">{pricingData.table.title}</h3>
+                <h3 className="aero_bp_section_title">{pricingData.table.title || 'Pricing & Packages'}</h3>
               </div>
 
               <div className="aero_bp_pricing_table_container">
@@ -197,22 +175,40 @@ const page = async ({ params }) => {
             </article>
           )}
 
+          {/* No Pricing Data Message */}
+          {!pricingData?.table && (
+            <div className="aero_bp_pricing_table_wrapper">
+              <div className="aero_bp_section_header">
+                <h3 className="aero_bp_section_title">Pricing Table</h3>
+              </div>
+              <div style={{
+                textAlign: 'center',
+                padding: '3rem 1rem',
+                color: '#fff',
+                fontSize: '1.2rem'
+              }}>
+                <p>Pricing information is currently being updated.</p>
+                <p style={{ marginTop: '1rem', fontSize: '1rem', color: '#ccc' }}>
+                  Please contact us for the latest pricing details.
+                </p>
+              </div>
+            </div>
+          )}
+
           {/* Footer Section */}
           {footerHTML && (
-            <div className="aero_bp_location_description">
-              <div
-                dangerouslySetInnerHTML={{ __html: footerHTML }}
-              />
+            <div className="aero_bp_footer_section">
+              <div className="aero_bp_footer_content">
+                {/* <div className="aero_bp_footer_icon">📋</div> */}
+                <div
+                  className="aero_bp_footer_text"
+                  dangerouslySetInnerHTML={{ __html: footerHTML }}
+                />
+              </div>
             </div>
           )}
         </section>
       </section>
-
-      {jsonLDschema && (
-        <script type="application/ld+json" suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: jsonLDschema }}
-        />
-      )}
     </main>
   );
 };

@@ -12,21 +12,21 @@ export default function BirthdayPartySection({ locationData }) {
 						<span>🎂 Ultimate Birthday Experience</span>
 					</div>
 					<h2 style={styles.title}>
-						Kids' Birthday Parties at <span style={styles.titleAccent}>AeroSports {location}</span>
+						Kids&apos; Birthday Parties at <span style={styles.titleAccent}>AeroSports {location}</span>
 					</h2>
 					<p style={styles.subtitle}>
-						Looking for the best place to celebrate your child's birthday? Look no further than AeroSports Trampoline Park {location}! Our facility offers an exhilarating environment where kids can jump, play, and enjoy their special day. We proudly serve families in Oakville, Mississauga, Brampton, Burlington, Etobicoke, Toronto, Georgetown, Milton, and surrounding areas, making us a top choice for birthday celebrations in the Greater Toronto Area (GTA).
+						Looking for the best place to celebrate your child&apos;s birthday? Look no further than AeroSports Trampoline Park {location}! Our facility offers an exhilarating environment where kids can jump, play, and enjoy their special day. We proudly serve families in Oakville, Mississauga, Brampton, Burlington, Etobicoke, Toronto, Georgetown, Milton, and surrounding areas, making us a top choice for birthday celebrations in the Greater Toronto Area (GTA).
 					</p>
 				</div>
 
 				{/* Why Choose Us Section */}
 				<div style={styles.contentSection}>
 					<h3 style={styles.sectionTitle}>
-						Why Choose Us for Your Kids' Birthday Party?
+						Why Choose Us for Your Kids&apos; Birthday Party?
 					</h3>
 
 					<p style={styles.introText}>
-						At AeroSports, we understand the importance of making every birthday a memorable experience. Here are some reasons why we are the best venue for kids' birthday parties:
+						At AeroSports, we understand the importance of making every birthday a memorable experience. Here are some reasons why we are the best venue for kids&apos; birthday parties:
 					</p>
 
 					<div style={styles.grid} className="gap-6 sm:gap-8 md:gap-10 lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
@@ -34,7 +34,7 @@ export default function BirthdayPartySection({ locationData }) {
 						<div style={styles.card}>
 							<h4 style={styles.cardTitle}>Exciting Party Packages</h4>
 							<p style={styles.cardText}>
-								Our customizable birthday party packages are designed to fit every child's interests, providing endless fun and excitement.
+								Our customizable birthday party packages are designed to fit every child&apos;s interests, providing endless fun and excitement.
 							</p>
 						</div>
 

@@ -49,7 +49,7 @@ const CelebrateSection = ({ locationSlug }) => {
 				<div
 				style={styles.celebrateGrid}
 						className="gap-6 sm:gap-8 md:gap-10 lg:gap-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-						{eventsList.map(event => <article className="flex flex-col shadow-[0_15px_50px_rgba(0,0,0,0.4)] hover:shadow-neon-pink-lg border-2 border-white hover:border-neon-pink-light rounded-xl h-full overflow-hidden transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)]">
+						{eventsList.map((event, index) => <article key={index} className="flex flex-col shadow-[0_15px_50px_rgba(0,0,0,0.4)] hover:shadow-neon-pink-lg border-2 border-white hover:border-neon-pink-light rounded-xl h-full overflow-hidden transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)]">
 						<div
 							style={{
 								backgroundImage: `url('${event.image}')`,
