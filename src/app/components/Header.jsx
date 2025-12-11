@@ -6,7 +6,7 @@ import Image from "next/image";
 import MenuButton from "./smallComponents/MenuButton";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 
-const Header = ({ location_slug, menudata, configdata }) => {
+const Header = ({ location_slug, menudata, configdata, pricingData }) => {
   const navList = (Array.isArray(menudata) ? menudata : [])
     .filter((item) => item.isactive === 1)
     .map((item) => ({ navName: item.desc, navUrl: item.path.toLowerCase() }))
@@ -92,6 +92,18 @@ const Header = ({ location_slug, menudata, configdata }) => {
                   {item.navName}
                 </Link>
               ))}
+            <Link
+              href={`/${location_slug}/pricing-table`}
+              prefetch
+            >
+              Pricing Table
+            </Link>
+            <Link
+              href={`/${location_slug}/gallery`}
+              prefetch
+            >
+              Gallery
+            </Link>
           </div>
         </nav>
       </section>
