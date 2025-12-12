@@ -46,7 +46,7 @@ const Page = async ({ params }) => {
 
 			<section className="subcategory_main_section-bg aero_bp_main_bg">
 
-				{/* <section className="aero-max-container"> */}
+				<section className="aero-max-container">
 
 					{/* Animated Title Section */}
 					<div className="aero_bp_title_wrapper">
@@ -217,7 +217,7 @@ const Page = async ({ params }) => {
             <div
               dangerouslySetInnerHTML={{ __html: pageData?.seosection || "" }}
             />
-				{/* </section> */}
+				</section>
 
 				{/* Planning & Contact Section */}
 				

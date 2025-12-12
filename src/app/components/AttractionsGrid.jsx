@@ -7,7 +7,7 @@ const AttractionsGrid = ({ attractionsData, waiverLink, locationSlug }) => {
   return (
     <>
       {/* Attractions Grid */}
-      {/* <div className="aero_attractions_grid">
+      <div className="aero_attractions_grid">
         {attractionsData?.map((item, i) => (
           <Link
             key={i}
@@ -36,7 +36,7 @@ const AttractionsGrid = ({ attractionsData, waiverLink, locationSlug }) => {
             </article>
           </Link>
         ))}
-      </div> */}
+      </div>
     </>
   );
 };
