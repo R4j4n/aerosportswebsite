@@ -69,12 +69,46 @@ const Subcategory = async ({ params }) => {
 
       <section className="subcategory_main_section-bg">
         <section className="aero-max-container">
-          <div
+          {/* <div
             className="subcategory_main_section"
             dangerouslySetInnerHTML={{
               __html: pageData.section1 || "",
             }}
-          />
+          /> */}
+<h2
+          style={{
+            fontSize: "clamp(2.5rem, 8vw, 4rem)",
+            fontWeight: 900,
+            textTransform: "uppercase",
+            lineHeight: 0.95,
+            marginBottom: "1.5rem",
+            color: "#fff",
+            textRendering: "geometricprecision",
+            WebkitFontSmoothing: "antialiased",
+          }}
+        >
+          <span style={{ color: "rgb(255, 255, 255)" }}>
+            {pageData?.desc}
+          </span>
+        </h2>
+
+        {/* Description */}
+        <p
+          style={{
+            fontSize: "1.1rem",
+            color: "rgba(255, 255, 255, 0.8)",
+            lineHeight: 1.7,
+            fontWeight: 700,
+            textRendering: "geometricprecision",
+            WebkitFontSmoothing: "antialiased",
+            maxWidth: "900px",
+            margin: "0 auto",
+          }}
+        >
+          {pageData?.metadescription}
+        </p>
+      
+
 <SubCategoryCard
           attractionsData={categoryData}
           location_slug={location_slug}

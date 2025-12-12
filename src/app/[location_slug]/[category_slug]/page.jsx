@@ -81,6 +81,7 @@ const Category = async ({ params }) => {
         </section>
 
           {/* Attractions Grid with Modal */}
+          
           <AttractionsGrid
             attractionsData={activeAttractions}
             waiverLink={waiverLink}
