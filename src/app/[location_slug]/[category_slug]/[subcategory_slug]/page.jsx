@@ -75,14 +75,15 @@ const Subcategory = async ({ params }) => {
               __html: pageData.section1 || "",
             }}
           />
-        </section>
-        <SubCategoryCard
+<SubCategoryCard
           attractionsData={categoryData}
           location_slug={location_slug}
           theme={"default"}
           title={`Other ${pageData.parentid}`}
           text={[pageData.metadescription]}
         />
+        </section>
+        
       </section>
 
       <section className="aero_home_article_section">
