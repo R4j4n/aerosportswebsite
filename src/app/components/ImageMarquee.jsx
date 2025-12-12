@@ -18,8 +18,8 @@ if (imagesString) {
   if(!images) return;
 }
 
-console.log(images);
-console.log('header image');
+// console.log(images);
+// console.log('header image');
   const isDefault = images.length === 0;
 
   return (

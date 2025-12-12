@@ -4,7 +4,7 @@
 .aero_attractions_wrapper {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  background: black;
   padding: 3em 0.75em;
   min-height: 100vh;
 }
@@ -263,20 +263,16 @@
 /* Attraction Card */
 .aero_attraction_card {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(26, 26, 26, 0.6) 100%
-  );
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   transform: translateY(30px);
   animation: cardFadeIn 0.6s ease forwards;
-  box-shadow: 0 10px 30px rgba(255, 17, 82, 0.3),
-    0 0 0 2px rgba(255, 17, 82, 0.2);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   clip-path: polygon(
     0 0,
     calc(100% - 20px) 0,
@@ -321,9 +317,8 @@
 
 .aero_attraction_card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(255, 17, 82, 0.5),
-    0 0 60px rgba(202, 255, 26, 0.4);
-  border-color: rgba(202, 255, 26, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 20px 60px;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Card Image Container */
@@ -345,45 +340,43 @@
   transform: scale(1.15);
 }
 
-/* Gradient Overlay on Image */
+/* Image Overlay - Removed gradient for clean design */
 .aero_attraction_card_image_overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-  z-index: 1;
+  display: none;
 }
 
 /* Card Content */
 .aero_attraction_card_content {
-  padding: 1.5em;
+  padding: 2rem;
   position: relative;
   z-index: 2;
 }
 
 .aero_attraction_card_title {
-  font-size: 1.4rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #ff1152 0%, #f00c74 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0 0 0.5em 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  text-rendering: geometricprecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .aero_attraction_card_description {
-  color: #e0e0e0;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 1em;
+  font-weight: 600;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-rendering: geometricprecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .aero_attraction_card_cta {

@@ -1,8 +1,6 @@
 import "../../styles/seo-section.css";
 
 const SEOSection = ({ locationData, locationSlug, estoreConfig, seosection }) => {
-	console.log({ seosection })
-
 	if (!seosection) return null;
 
 	return (

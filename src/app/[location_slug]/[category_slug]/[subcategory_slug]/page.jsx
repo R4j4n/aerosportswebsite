@@ -48,7 +48,7 @@ const Subcategory = async ({ params }) => {
     (child) => child.path !== subcategory_slug && child.isactive == 1
   );
 
-  console.log("param ", location_slug, subcategory_slug, category_slug);
+  // console.log("param ", location_slug, subcategory_slug, category_slug);
 
   const jsonLDschema = await generateSchema(
     pageData,
@@ -69,13 +69,13 @@ const Subcategory = async ({ params }) => {
 
       <section className="subcategory_main_section-bg">
         <section className="aero-max-container">
-          {/* <div
+          <div
             className="subcategory_main_section"
             dangerouslySetInnerHTML={{
               __html: pageData.section1 || "",
             }}
-          /> */}
-<h2
+          />
+{/* <h2
           style={{
             fontSize: "clamp(2.5rem, 8vw, 4rem)",
             fontWeight: 900,
@@ -89,8 +89,8 @@ const Subcategory = async ({ params }) => {
         >
           <span style={{ color: "rgb(255, 255, 255)" }}>
             {pageData?.desc}
-          </span>
-        </h2>
+          </span> */}
+        {/* </h2> */}
 
         {/* Description */}
         <p

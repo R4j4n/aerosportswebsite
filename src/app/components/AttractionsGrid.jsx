@@ -2,11 +2,14 @@
 
 import Link from 'next/link';
 import "../styles/attractions.css";
+import "../styles/subcategory.css";
 
 const AttractionsGrid = ({ attractionsData, waiverLink, locationSlug }) => {
   return (
     <>
       {/* Attractions Grid */}
+
+
       <div className="aero_attractions_grid">
         {attractionsData?.map((item, i) => (
           <Link

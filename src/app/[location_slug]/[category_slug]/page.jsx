@@ -13,6 +13,7 @@ import {
 } from "@/lib/sheets";
 import MotionImage from "@/components/MotionImage";
 import AttractionsGrid from "@/components/AttractionsGrid";
+import SickKidsSection from "@/components/sections/SickKidsSection";
 
 export async function generateMetadata({ params }) {
   const { location_slug, category_slug } = params;
@@ -58,6 +59,7 @@ const Category = async ({ params }) => {
             waiverLink={waiverLink}
             locationData={locationData}
           />
+          
       <section className="aero_attractions_wrapper">
         <section className="aero-max-container">
           
@@ -78,15 +80,19 @@ const Category = async ({ params }) => {
               )}
             </div>
           </div> */}
-        </section>
+        {/* </section> */}
 
-          {/* Attractions Grid with Modal */}
-          
-          <AttractionsGrid
-            attractionsData={activeAttractions}
-            waiverLink={waiverLink}
-            locationSlug={location_slug}
-          />
+          {/* Conditional Content - SickKids or Attractions Grid */}
+
+          {category_slug === "sickkids" ? (
+            <SickKidsSection locationData={locationData} />
+          ) : (
+            <AttractionsGrid
+              attractionsData={activeAttractions}
+              waiverLink={waiverLink}
+              locationSlug={location_slug}
+            />
+          )}
 
         {/* SEO Content Section */}
         {/* <section className="aero_home_article_section"> */}
@@ -98,7 +104,7 @@ const Category = async ({ params }) => {
               dangerouslySetInnerHTML={{ __html: pageData?.seosection || "" }}
             />
           {/* </section> */}
-        {/* </section> */}
+        </section>
       </section>
       <script
         type="application/ld+json"

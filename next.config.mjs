@@ -51,7 +51,7 @@ async function fetchSheetRedirects() {
 const nextConfig = {
   async redirects() {
     const sheetRedirects = await fetchSheetRedirects();
-console.log('Fetched redirects:', sheetRedirects);
+// console.log('Fetched redirects:', sheetRedirects);
 
     // (Optional) Keep a few hardcoded fallbacks here if you want
     // const staticRedirects = [ ... ];
