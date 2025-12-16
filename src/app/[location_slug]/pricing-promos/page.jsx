@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/subcategory.css";
 import "../../styles/kidsparty.css";
-import { generateMetadataLib, generateSchema, fetchPricingTableData, fetchPageData } from "@/lib/sheets";
+import { generateMetadataLib, generateSchema, fetchPricingTableData, fetchPageData, fetchsheetdata } from "@/lib/sheets";
 
 export async function generateMetadata({ params }) {
   const metadata = await generateMetadataLib({
@@ -9,6 +9,8 @@ export async function generateMetadata({ params }) {
     category: '',
     page: 'pricing-promos'
   });
+
+
 
   // Customize the metadata for the pricing page
   return {
@@ -21,9 +23,11 @@ export async function generateMetadata({ params }) {
 const page = async ({ params }) => {
   const { location_slug } = params;
 
-  const [pricingData, locationData] = await Promise.all([
+  const [pricingData, locationData, promotions] = await Promise.all([
     fetchPricingTableData(location_slug),
     fetchPageData(location_slug, 'home'),
+    fetchsheetdata("promotions", location_slug),
+
   ]);
 
   // Safely prepare header and footer HTML - ensure they're always strings
@@ -42,7 +46,66 @@ const page = async ({ params }) => {
     <main>
       <section className="subcategory_main_section-bg aero_bp_main_bg">
         <section className="aero-max-container">
-          {/* Header Section */}
+          <div className="z-10 relative mx-auto px-4 py-24 max-w-7xl">
+  {/* Section Header */}
+  <div className="mx-auto mb-20 max-w-4xl text-center">
+    <div className="inline-block bg-[#39ff14] mb-6 px-6 py-2 rounded-full font-extrabold text-black text-xs uppercase tracking-widest">
+      Limited-Time Offers
+    </div>
+
+    <h2 className="mb-6 font-black text-[clamp(2.5rem,8vw,4rem)] text-white uppercase leading-[0.95]">
+      Exclusive <span className="text-[#ff1152]">Promotions</span>
+    </h2>
+
+    <p className="font-semibold text-white/80 text-lg leading-relaxed">
+      Don’t miss out on our special deals designed to bring more fun, more value,
+      and unforgettable experiences for everyone.
+    </p>
+  </div>
+
+  {/* Promotions Grid */}
+  <div className="gap-6 sm:gap-8 lg:gap-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+    {promotions.map((promo, index) => (
+      <article
+        key={index}
+        className="relative bg-white/5 shadow-[0_15px_50px_rgba(0,0,0,0.4)] p-8 border-2 border-white/10 hover:border-[#ff1152] rounded-2xl transition-all hover:-translate-y-2 duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)]"
+      >
+        {/* Badge */}
+        <span className="-top-3 right-6 absolute bg-[#39ff14] px-3 py-1 rounded-full font-extrabold text-[0.65rem] text-black uppercase tracking-wide">
+          {promo.badge}
+        </span>
+
+        {/* Title */}
+        <h3 className="mb-4 font-black text-white text-lg uppercase tracking-wide">
+          {promo.title}
+        </h3>
+
+        {/* Description */}
+        <p className="mb-6 font-semibold text-white/70 text-sm leading-relaxed">
+          {promo.description}
+        </p>
+
+        {/* Details */}
+        <div className="flex flex-col gap-2 mb-8 font-bold text-white/80 text-sm">
+          <time>{promo.validity}</time>
+          <span className="text-[#ff1152] uppercase tracking-wide">
+            Code: {promo.code}
+          </span>
+        </div>
+
+        {/* CTA */}
+        <a
+          href={promo.link}
+          className="inline-block bg-[#ff1152] hover:bg-[#e80f4b] px-6 py-3 rounded-xl w-full font-extrabold text-white text-sm text-center uppercase tracking-wider transition-all duration-300"
+        >
+          {promo.linktext}
+        </a>
+      </article>
+    ))}
+  </div>
+</div>
+
+
           {headerHTML && (
             <div className="aero_bp_title_wrapper">
               <div className="aero_bp_title_floating_bg">
@@ -73,7 +136,6 @@ const page = async ({ params }) => {
           {pricingData?.table && (
             <article className="aero_bp_pricing_table_wrapper">
               <div className="aero_bp_section_header">
-                <div className="aero_bp_section_icon">🎯</div>
                 <h3 className="aero_bp_section_title">{pricingData.table.title || 'Pricing & Packages'}</h3>
               </div>
 

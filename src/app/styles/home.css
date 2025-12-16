@@ -1520,6 +1520,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   );
   opacity: 0;
   transition: opacity 0.45s ease;
+  pointer-events: none;
 }
 
 /* hover overlay rises softly */
@@ -1541,6 +1542,7 @@ footer .aero_home-headerimg-wrapper > img:hover {
   opacity: 0;
   filter: blur(18px);
   transition: opacity 0.55s ease;
+  pointer-events: none;
 }
 
 .aero_home_BPJ_wrapper > div:hover::after {

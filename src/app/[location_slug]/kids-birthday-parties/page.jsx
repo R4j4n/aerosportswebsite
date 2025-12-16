@@ -48,49 +48,21 @@ const Page = async ({ params }) => {
 
 				<section className="aero-max-container">
 
-					{/* Animated Title Section */}
-					<div className="aero_bp_title_wrapper">
-						<div className="aero_bp_title_floating_bg">
-							<div className="aero_bp_float_emoji" style={{ top: '8%', left: '5%', animationDelay: '0s' }}>🎂</div>
-							<div className="aero_bp_float_emoji" style={{ top: '15%', right: '10%', animationDelay: '2s' }}>🎈</div>
-							<div className="aero_bp_float_emoji" style={{ top: '25%', left: '8%', animationDelay: '4s' }}>🎉</div>
-							<div className="aero_bp_float_emoji" style={{ top: '35%', right: '5%', animationDelay: '1s' }}>🎁</div>
-							<div className="aero_bp_float_emoji" style={{ top: '50%', left: '3%', animationDelay: '2.5s' }}>🎪</div>
-							<div className="aero_bp_float_emoji" style={{ bottom: '30%', left: '12%', animationDelay: '3s' }}>🦘</div>
-							<div className="aero_bp_float_emoji" style={{ bottom: '20%', right: '15%', animationDelay: '5s' }}>🌟</div>
-							<div className="aero_bp_float_emoji" style={{ top: '60%', right: '8%', animationDelay: '1.5s' }}>🎊</div>
-						</div>
-
-						<div className="aero_bp_gradient_orb aero_bp_gradient_orb_1"></div>
-						<div className="aero_bp_gradient_orb aero_bp_gradient_orb_2"></div>
-						<div className="aero_bp_gradient_orb aero_bp_gradient_orb_3"></div>
-
-						<div className="aero_bp_title_content">
-							<div className="aero_bp_title_badge">
-								<span>🎂 ULTIMATE BIRTHDAY EXPERIENCE</span>
-							</div>
-							<h2 className="aero_bp_gradient_title">
-								<span className="aero_bp_title_glitch" data-text="Birthday Party">Birthday Party</span>
-								<br />
-								Packages & Pricing
-							</h2>
-							{birthdayPartyJson?.location && (
-								<p className="aero_bp_title_description">{birthdayPartyJson.location.description}</p>
-							)}
-							{!birthdayPartyJson && (
-								<p className="aero_bp_title_description">
-									At AeroSports {location_slug}, we offer competitively priced birthday party packages in our private party rooms—perfectly located near you. Choose the package that fits your budget and guest list:
-								</p>
-							)}
-						</div>
-					</div>
+					{/* <div
+              dangerouslySetInnerHTML={{ __html: pageData?.section1 || "" }}
+            /> */}
+            
+						
 
 					{birthdayPartyJson?.party_packages ? (
 						<article className="aero_bp_pricing_table_wrapper">
 							<div className="aero_bp_section_header">
-								<div className="aero_bp_section_icon">🎯</div>
-								<h3 className="aero_bp_section_title">Compare Our Packages</h3>
-								<p className="aero_bp_section_subtitle">Choose the perfect party experience for your celebration</p>
+								<h3 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', fontWeight: 900, textTransform: 'uppercase', color: 'rgb(255, 255, 255)', marginBottom: '1.5rem', textAlign: 'center', textRendering: 'geometricPrecision', WebkitFontSmoothing: 'antialiased' }}>
+									Pick the Perfect Party
+								</h3>
+								<p style={{ fontSize: '1.1rem', color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.7, fontWeight: 600, margin: '0 auto 2rem', textAlign: 'center', maxWidth: '900px' }}>
+									Choose the perfect party experience for your celebration
+								</p>
 							</div>
 
 							<div className="aero_bp_pricing_table_container">
@@ -116,19 +88,19 @@ const Page = async ({ params }) => {
 
 									return (
 										<div
-											className="aero_bp_grid_table"
+											className="bg-white/5 shadow-[0_15px_50px_rgba(0,0,0,0.4)] border-2 border-white/10 rounded-2xl overflow-hidden aero_bp_grid_table"
 											style={{
 												gridTemplateColumns: `minmax(200px, 1fr) repeat(${packageNames.length}, minmax(150px, 1fr))`
 											}}
 										>
 											{/* Header Row */}
-											<div className="aero_bp_grid_header aero_bp_grid_header_feature">
+											<div className="[-webkit-font-smoothing:antialiased] font-black text-white text-base uppercase tracking-wide aero_bp_grid_header aero_bp_grid_header_feature [text-rendering:geometricPrecision]">
 												FEATURES
 											</div>
 											{packageNames.map((packageName, index) => (
 												<div
 													key={packageName}
-													className="aero_bp_grid_header aero_bp_grid_header_package"
+													className="[-webkit-font-smoothing:antialiased] font-black text-white text-base uppercase tracking-wide aero_bp_grid_header aero_bp_grid_header_package [text-rendering:geometricPrecision]"
 													style={{ animationDelay: `${index * 0.1}s` }}
 												>
 													{packageName}
@@ -140,7 +112,7 @@ const Page = async ({ params }) => {
 												<React.Fragment key={feature}>
 													{/* Feature Name Cell */}
 													<div
-														className="aero_bp_grid_cell aero_bp_grid_cell_feature"
+														className="[-webkit-font-smoothing:antialiased] font-bold text-[0.95rem] text-white/90 aero_bp_grid_cell aero_bp_grid_cell_feature [text-rendering:geometricPrecision]"
 														style={{ animationDelay: `${rowIndex * 0.05}s` }}
 													>
 														{feature}
@@ -153,7 +125,7 @@ const Page = async ({ params }) => {
 														return (
 															<div
 																key={`${feature}-${packageName}`}
-																className="aero_bp_grid_cell aero_bp_grid_cell_value"
+																className="[-webkit-font-smoothing:antialiased] font-semibold text-[0.95rem] text-white/80 aero_bp_grid_cell aero_bp_grid_cell_value [text-rendering:geometricPrecision]"
 																style={{ animationDelay: `${rowIndex * 0.05}s` }}
 															>
 																{value === undefined || value === null ? (
@@ -212,9 +184,6 @@ const Page = async ({ params }) => {
 					)}
 {/* <BirthdayPartySection locationData={locationData}></BirthdayPartySection> */}
 <div
-              dangerouslySetInnerHTML={{ __html: pageData?.section1 || "" }}
-            />
-            <div
               dangerouslySetInnerHTML={{ __html: pageData?.seosection || "" }}
             />
 				</section>

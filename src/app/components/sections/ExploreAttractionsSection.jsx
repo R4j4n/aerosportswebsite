@@ -7,10 +7,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export default function ExploreAttractionsSection({ attractions, location_slug }) {
-	const [currentPage, setCurrentPage] = useState(0);
 	const [hoveredIndex, setHoveredIndex] = useState(null);
 	const [isVisible, setIsVisible] = useState(false);
-	const [itemsPerPage, setItemsPerPage] = useState(6);
 	const sectionRef = useRef(null);
 
 	useEffect(() => {
@@ -26,65 +24,11 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 		return () => observer.disconnect();
 	}, []);
 
-	useEffect(() => {
-		const updateItemsPerPage = () => {
-			if (window.innerWidth < 640) { 
-				setItemsPerPage(1); // Mobile: 2x1
-				setCurrentPage(0); // Reset to first page on resize
-			} else if (window.innerWidth < 1024) { //lg
-				setItemsPerPage(2); // Tablet: 2x1
-				setCurrentPage(0);
-			} else if (window.innerWidth < 1280) { //xl
-				setItemsPerPage(2); // Tablet: 2x1
-				setCurrentPage(0);
-			} else if (window.innerWidth < 1536) { //2xl
-				setItemsPerPage(4); // Tablet: 2x1
-				setCurrentPage(0);
-			}
-			else {
-				setItemsPerPage(6); // Desktop: 3x2
-				setCurrentPage(0);
-			}
-		};
-
-		updateItemsPerPage();
-		window.addEventListener('resize', updateItemsPerPage);
-		return () => window.removeEventListener('resize', updateItemsPerPage);
-	}, []);
-
-	const totalPages = Math.ceil(attractions?.length / itemsPerPage) || 1;
-	const startIndex = currentPage * itemsPerPage;
-	const visibleAttractions = attractions?.slice(startIndex, startIndex + itemsPerPage) || [];
-
-	const handlePrevious = () => setCurrentPage(prev => prev === 0 ? totalPages - 1 : prev - 1);
-	const handleNext = () => setCurrentPage(prev => prev === totalPages - 1 ? 0 : prev + 1);
-
-	// Pagination component
-	const PaginationControls = ({ className }) => (
-		totalPages > 1 && (
-			<div className={cn("flex items-center gap-6", className)}>
-				<button onClick={handlePrevious}
-					className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
-					←
-				</button>
-
-				<span className="font-semibold text-white text-lg">
-					{currentPage + 1} / {totalPages}
-				</span>
-
-				<button onClick={handleNext}
-					className="flex justify-center items-center bg-[#ff1152] hover:bg-[#ff3e6d] rounded-full w-12 h-12 font-bold text-white text-xl transition">
-					→
-				</button>
-			</div>
-		)
-	);
-
 	return (
 		<section
 			ref={sectionRef}
 			className={cn(
-				"relative bg-black py-16 sm:py-24 lg:py-32 overflow-hidden transition-opacity duration-700",
+				"relative bg-black py-8 sm:py-16 lg:py-24 overflow-hidden transition-opacity duration-700",
 				isVisible ? "opacity-100" : "opacity-0"
 			)}
 		>
@@ -92,7 +36,7 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 			<div className="absolute inset-0 bg-gradient-to-br from-[#ff1152] via-[#ff1152] to-[#ff4d7d] [clip-path:polygon(100%_0,100%_100%,80%_100%,0_0)]" />
 
 			<div className="z-10 relative mx-auto px-6 sm:px-10 lg:px-16 max-w-[1400px]">
-				<div className="flex flex-col items-start gap-8 lg:gap-16 lg:grid lg:grid-cols-[0.8fr_1.5fr]">
+				<div className="flex flex-col items-start lg:items-center gap-8 lg:gap-16 lg:grid lg:grid-cols-[0.8fr_1.5fr]">
 
 					{/* LEFT */}
 					<div className="flex flex-col justify-center gap-6 lg:gap-8 w-full lg:w-auto">
@@ -105,26 +49,22 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 							<span className="text-[#ff1152]">Our</span> Attractions
 						</h2>
 
-						{/* Pagination - Desktop only */}
-						<PaginationControls className="hidden lg:flex" />
-
 						<Button variant="neonGreen" size="full" rounded="md" asChild>
 							<Link href={`/${location_slug}/attractions`}>
-								All Attractions →
+								View Details →
 							</Link>
 						</Button>
 					</div>
 
 					{/* RIGHT GRID */}
 					<div className="flex flex-col gap-8 w-full">
-						<div className="gap-4 sm:gap-6 grid grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 xl:grid-cols-2 w-full">
-							{visibleAttractions.map((attraction, index) => {
-								const cardIndex = startIndex + index;
-								const isHovered = hoveredIndex === cardIndex;
+						<div className="gap-4 sm:gap-6 grid grid-cols-2 lg:grid-cols-3 w-full">
+							{attractions?.map((attraction, index) => {
+								const isHovered = hoveredIndex === index;
 
 								return (
-									<div key={cardIndex}
-										onMouseEnter={() => setHoveredIndex(cardIndex)}
+									<div key={index}
+										onMouseEnter={() => setHoveredIndex(index)}
 										onMouseLeave={() => setHoveredIndex(null)}
 										className={cn(
 											"flex flex-col items-center bg-white overflow-hidden text-center transition-all",
@@ -136,8 +76,8 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 											{attraction?.smallimage && (
 												<Image
 													src={attraction.smallimage}
-													width={250} height={250}
-													alt={attraction?.iconalttextforhomepage ?? `Attraction ${cardIndex + 1}`}
+													width={200} height={200}
+													alt={attraction?.iconalttextforhomepage ?? `Attraction ${index + 1}`}
 													className="w-full h-full object-cover"
 													unoptimized
 												/>
@@ -154,9 +94,6 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 								);
 							})}
 						</div>
-
-						{/* Pagination - Mobile and Tablet only */}
-						<PaginationControls className="lg:hidden flex justify-center" />
 					</div>
 
 				</div>

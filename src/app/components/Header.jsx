@@ -55,13 +55,13 @@ const Header = ({ location_slug, menudata, configdata, pricingData }) => {
 
         <div className="aero-btn-booknow app-container" style={{ textAlign: "right" }}>
           {estoreConfig?.value && (
-            <Link href={estoreConfig.value} target="_blank" prefetch>
-              <button>book</button>
+            <Link href={estoreConfig.value} target="_blank" prefetch className="aero-faq" style={{ background: '#ff1152' }}>
+              Book Now
             </Link>
           )}
         </div>
 
-        <div className="hidden lg:flex lg:flex-row-reverse aero-btn-booknow">
+        <div className="hidden lg:flex lg:flex-row-reverse aero-btn-booknow gap-3">
           <Link
             href={`/${location_slug}/contactus`}
             prefetch
@@ -72,8 +72,8 @@ const Header = ({ location_slug, menudata, configdata, pricingData }) => {
             <span>Inquiry Now</span>
           </Link>
           {estoreConfig?.value && (
-            <Link href={estoreConfig.value} target="_blank" prefetch>
-              <button>book now</button>
+            <Link href={estoreConfig.value} target="_blank" prefetch className="aero-faq" style={{ background: '#ff1152' }}>
+              Book Now
             </Link>
           )}
         </div>
@@ -98,12 +98,12 @@ const Header = ({ location_slug, menudata, configdata, pricingData }) => {
             >
               Pricing & Promos
             </Link>
-            <Link
+            {/* <Link
               href={`/${location_slug}/gallery`}
               prefetch
             >
               Gallery
-            </Link>
+            </Link> */}
           </div>
         </nav>
       </section>
