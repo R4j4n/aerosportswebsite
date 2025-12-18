@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-const MotionImage = ({ pageData, waiverLink, locationData }) => {
+const MotionImage = ({ pageData, waiverLink, locationData, hideOverlay = false }) => {
   //console.log(header_image);
   const item =
     Array.isArray(pageData) && pageData.length > 0 ? pageData[0] : pageData;
@@ -72,7 +72,76 @@ const MotionImage = ({ pageData, waiverLink, locationData }) => {
           >
             <source src={item.video} type="video/mp4" />
           </video>
-          <article className="image-content"></article>
+
+          {/* Overlay Content - Only show if hideOverlay is false */}
+          {!hideOverlay && (
+            <div className="z-20 absolute inset-0 flex justify-center items-center bg-gradient-to-br from-black/50 to-black/70 px-6 py-16">
+              <motion.div
+                className="max-w-3xl text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                {/* Title */}
+                <h1 className="mb-4 font-black text-[clamp(2rem,6vw,3.5rem)] text-white uppercase leading-tight tracking-wide">
+                  {item.title}
+                </h1>
+
+                {/* Small Text */}
+                {item.smalltext && (
+                  <p className="mx-auto mb-8 max-w-xl text-gray-300 text-lg leading-relaxed">
+                    {item.smalltext}
+                  </p>
+                )}
+
+                {/* Info Blocks */}
+                {locData && (
+                  <div className="space-y-4 mb-8 text-white text-lg">
+                    <p>
+                      <span className="font-bold text-neon-green">Phone: </span>
+                      <a
+                        href={toTelHref(locData.phone)}
+                        aria-label={`Call AeroSports ${locData.location} at ${locData.phone}`}
+                        className="hover:text-neon-green transition"
+                      >
+                        {locData.phone}
+                      </a>
+                    </p>
+
+                    <p>
+                      <span className="font-bold text-neon-green">Address: </span>
+                      <a
+                        href={locData.gmburl}
+                        target="_blank"
+                        className="hover:text-neon-green transition"
+                      >
+                        {locData.address}
+                      </a>
+                    </p>
+                  </div>
+                )}
+
+                {/* Waiver Button */}
+                {waiverLink && (
+                  <div className="flex justify-center">
+                    <Link
+                      href={waiverLink}
+                      target="_blank"
+                      title="sign your waiver at aerosports trampoline park"
+                    >
+                      <motion.button
+                        className="bg-neon-green hover:bg-[#2ddb10] shadow-[0_0_20px_#39FF14] px-8 py-3 rounded-full font-bold text-black transition animate-pulse"
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        Sign Waiver
+                      </motion.button>
+                    </Link>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          )}
         </section>
       </section>
     );

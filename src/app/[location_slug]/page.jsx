@@ -68,6 +68,8 @@ const Home = async ({ params }) => {
         headerImage={header_image}
         waiverLink={waiverLink}
         locationData={locationData}
+        estoreConfig={estoreConfig}
+        locationSlug={location_slug}
       />
 
       {/* SEO Section - Diagonal Split Layout */}

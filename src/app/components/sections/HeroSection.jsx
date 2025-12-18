@@ -1,7 +1,8 @@
 import MotionImage from "@/components/MotionImage";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const HeroSection = ({ headerImage, waiverLink, locationData }) => {
+const HeroSection = ({ headerImage, waiverLink, locationData, estoreConfig, locationSlug }) => {
   return (
     <section className="relative flex justify-center items-center pt-20 sm:pt-30 md:pt-40 lg:pt-50 w-full min-h-screen overflow-hidden">
       {/* Background Motion Image */}
@@ -10,6 +11,7 @@ const HeroSection = ({ headerImage, waiverLink, locationData }) => {
         pageData={headerImage}
         waiverLink={waiverLink}
         locationData={locationData}
+        hideOverlay={true}
       />
 
       {/* Overlay */}
@@ -56,8 +58,18 @@ const HeroSection = ({ headerImage, waiverLink, locationData }) => {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap justify-center gap-6 animate-[fadeInUp_1s_ease-out_0.8s_backwards]">
-            <Button variant="primary">🎪 Start Jumping</Button>
-            <Button variant="secondary">📅 Book a Party</Button>
+            {estoreConfig?.value && (
+              <Button variant="primary" asChild>
+                <Link href={estoreConfig.value} target="_blank">
+                  🎪 Start Jumping
+                </Link>
+              </Button>
+            )}
+            <Button variant="secondary" asChild>
+              <Link href={`/${locationSlug}/kids-birthday-parties`}>
+                📅 Book a Party
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

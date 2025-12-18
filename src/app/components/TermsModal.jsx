@@ -9,6 +9,28 @@ export default function TermsModal({ content }) {
 
   return (
     <>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+      `}</style>
+
       {/* Terms Link */}
       <div className="text-center mt-8">
         <button
@@ -22,11 +44,11 @@ export default function TermsModal({ content }) {
       {/* Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-[fadeIn_0.3s_ease-out]"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative bg-gradient-to-br from-gray-900 to-black border-2 border-[#ff1152]/50 rounded-2xl shadow-[0_20px_60px_rgba(255,17,82,0.4)] max-w-4xl max-h-[80vh] overflow-hidden w-full"
+            className="relative bg-gradient-to-br from-gray-900 to-black border-2 border-[#ff1152]/50 rounded-2xl max-w-4xl max-h-[80vh] overflow-hidden w-full animate-[scaleIn_0.3s_ease-out]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}

@@ -52,14 +52,28 @@ const Category = async ({ params }) => {
   const activeAttractions =
     attractionsData[0]?.children?.filter((item) => item?.isactive == 1) || [];
 
+  // Check if pageData has a video
+  const hasVideo = pageData?.video || (Array.isArray(pageData) && pageData[0]?.video);
+
   return (
     <main>
-      <MotionImage
-            pageData={{...pageData,video:null}}
+      {hasVideo && (
+        <div style={{ position: 'relative', height: '100vh', minHeight: '600px', width: '100%' }}>
+          <MotionImage
+            pageData={pageData}
             waiverLink={waiverLink}
             locationData={locationData}
           />
-          
+        </div>
+      )}
+      {!hasVideo && (
+        <MotionImage
+          pageData={pageData}
+          waiverLink={waiverLink}
+          locationData={locationData}
+        />
+      )}
+
       <section className="aero_attractions_wrapper">
         <section className="aero-max-container">
           

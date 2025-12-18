@@ -4,6 +4,7 @@ import "../../styles/subcategory.css";
 import BirthdayPartySection from "@/components/sections/BirthdayPartySection";
 import { fetchsheetdata, fetchPageData, generateMetadataLib, fetchMenuData, getWaiverLink, generateSchema, fetchBirthdayPartyJson } from "@/lib/sheets";
 import MotionImage from "@/components/MotionImage";
+import TermsModal from "@/components/TermsModal";
 export async function generateMetadata({ params }) {
 	const metadata = await generateMetadataLib({
 		location: params.location_slug,
@@ -215,6 +216,13 @@ const Page = async ({ params }) => {
 							<p className="font-semibold text-neon-green text-lg leading-relaxed">{locData.address}</p>
 						</div>
 					</div>
+
+					{/* Terms & Conditions Modal */}
+					{pageData?.section2 && (
+						<div className="aero-max-container">
+							<TermsModal content={pageData.section2} />
+						</div>
+					)}
 				</div>
 			</section>
 			  <script
