@@ -63,7 +63,9 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 								const isHovered = hoveredIndex === index;
 
 								return (
-									<div key={index}
+									<Link
+										key={index}
+										href={`/${location_slug}/attractions/${attraction?.path}`}
 										onMouseEnter={() => setHoveredIndex(index)}
 										onMouseLeave={() => setHoveredIndex(null)}
 										className={cn(
@@ -86,11 +88,11 @@ export default function ExploreAttractionsSection({ attractions, location_slug }
 
 										<h3 className={cn(
 											"p-3 sm:p-4 w-full font-semibold text-black text-xs sm:text-sm uppercase tracking-wide transition",
-											isHovered && "bg-neon-pink"
+											isHovered && "bg-neon-pink underline"
 										)}>
 											{(attraction?.name || attraction?.title || "Attraction").split(" - ").pop()}
 										</h3>
-									</div>
+									</Link>
 								);
 							})}
 						</div>

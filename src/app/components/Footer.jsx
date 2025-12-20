@@ -33,11 +33,6 @@ const Footer = ({ location_slug, configdata, menudata, reviewdata,locationData }
   const birthDaypartyData = getDataByParentId(menudata, "kids-birthday-parties");
   const galleryData = getDataByParentId(menudata,"gallery");
 
-  console.log('Footer data:', {
-    birthDaypartyData: birthDaypartyData?.[0]?.path,
-    attractionsData: attractionsData?.[0]?.path,
-    groupsData: groupsData?.[0]?.path
-  });
   return (
     <footer className="aero_footer_section-bg">
       {/* Hero Section with Quick Links */}
@@ -52,7 +47,7 @@ const Footer = ({ location_slug, configdata, menudata, reviewdata,locationData }
         />
         <article className="aero-max-container aero_home_BPJ_wrapper">
           {[
-            { icon: event_icon, text: "Birthday Parties", url:`/${location_slug}/${birthDaypartyData?.[0]?.path || 'kids-birthday-parties'}`  },
+            { icon: event_icon, text: "Birthday Parties", url:`${locationData?.[0].birthdayurl}`  },
             { icon: park_feature_icon, text: "Gallery", url:`/${location_slug}/${galleryData?.[0]?.path || 'gallery'}` },
             { icon: jump_icon, text: "Group Events" , url:`/${location_slug}/${groupsData?.[0]?.path || 'groups-events'}`},
           ].map((item, index) => (

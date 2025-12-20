@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function TermsModal({ content }) {
+export default function TermsModal({ content, buttonText = "View Terms & Conditions", title = "Terms & Conditions", showAsButton = false }) {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!content) return null;
@@ -31,14 +31,23 @@ export default function TermsModal({ content }) {
         }
       `}</style>
 
-      {/* Terms Link */}
+      {/* Trigger Button/Link */}
       <div className="text-center mt-8">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="text-white/80 hover:text-[#39ff14] underline underline-offset-4 font-semibold text-sm transition-colors duration-300"
-        >
-          View Terms & Conditions
-        </button>
+        {showAsButton ? (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="inline-block bg-[#ff1152] hover:bg-[#e80f4b] px-8 py-4 rounded-xl font-extrabold text-white text-base uppercase tracking-wider transition-all duration-300 hover:scale-105"
+          >
+            {buttonText}
+          </button>
+        ) : (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="text-white/80 hover:text-[#39ff14] underline underline-offset-4 font-semibold text-sm transition-colors duration-300"
+          >
+            {buttonText}
+          </button>
+        )}
       </div>
 
       {/* Modal */}
@@ -48,14 +57,14 @@ export default function TermsModal({ content }) {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative bg-gradient-to-br from-gray-900 to-black border-2 border-[#ff1152]/50 rounded-2xl max-w-4xl max-h-[80vh] overflow-hidden w-full animate-[scaleIn_0.3s_ease-out]"
+            className="relative bg-gradient-to-br from-gray-900 to-black border-2 border-[#ff1152]/50 rounded-2xl max-w-7xl max-h-[90vh] overflow-hidden w-full animate-[scaleIn_0.3s_ease-out]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="sticky top-0 bg-gradient-to-r from-[#ff1152] to-[#f00c74] px-6 py-4 border-b-2 border-[#39ff14]/30">
               <div className="flex justify-between items-center">
                 <h3 className="font-black text-white text-2xl uppercase tracking-wide">
-                  Terms & Conditions
+                  {title}
                 </h3>
                 <button
                   onClick={() => setIsOpen(false)}
@@ -68,7 +77,7 @@ export default function TermsModal({ content }) {
             </div>
 
             {/* Content */}
-            <div className="p-6 sm:p-8 overflow-y-auto max-h-[calc(80vh-80px)]">
+            <div className="p-6 sm:p-8 overflow-y-auto max-h-[calc(90vh-160px)]">
               <div
                 className="prose prose-invert prose-sm sm:prose-base max-w-none
                   prose-headings:text-white prose-headings:font-bold

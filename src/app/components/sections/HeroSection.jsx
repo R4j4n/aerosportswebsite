@@ -61,13 +61,13 @@ const HeroSection = ({ headerImage, waiverLink, locationData, estoreConfig, loca
             {estoreConfig?.value && (
               <Button variant="primary" asChild>
                 <Link href={estoreConfig.value} target="_blank">
-                  🎪 Start Jumping
+                Start Jumping
                 </Link>
               </Button>
             )}
             <Button variant="secondary" asChild>
-              <Link href={`/${locationSlug}/kids-birthday-parties`}>
-                📅 Book a Party
+              <Link href={`${locationData?.[0].birthdayurl}`}>
+                Book a Party
               </Link>
             </Button>
           </div>

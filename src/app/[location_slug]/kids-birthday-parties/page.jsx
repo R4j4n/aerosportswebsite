@@ -159,6 +159,16 @@ const Page = async ({ params }) => {
 									);
 								})()}
 							</div>
+
+							{/* View Packages Detail Button */}
+							{pageData?.section2 && (
+								<TermsModal
+									content={pageData.section2}
+									buttonText="View Packages Detail"
+									title="Package Details"
+									showAsButton={true}
+								/>
+							)}
 						</article>
 					) : (
 						<article className="aero_bp_2_main_section">
@@ -216,13 +226,6 @@ const Page = async ({ params }) => {
 							<p className="font-semibold text-neon-green text-lg leading-relaxed">{locData.address}</p>
 						</div>
 					</div>
-
-					{/* Terms & Conditions Modal */}
-					{pageData?.section2 && (
-						<div className="aero-max-container">
-							<TermsModal content={pageData.section2} />
-						</div>
-					)}
 				</div>
 			</section>
 			  <script
