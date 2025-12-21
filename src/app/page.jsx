@@ -30,11 +30,14 @@ export default async function Home() {
               >
                 <article className="relative flex flex-col bg-linear-to-br from-black/80 to-[#1a1a1a]/60 shadow-[0_10px_30px_rgba(240,12,116,0.3),0_0_0_2px_rgba(240,12,116,0.2)] hover:shadow-[0_20px_50px_rgba(240,12,116,0.5),0_0_60px_rgba(202,255,26,0.4)] rounded-[20px] w-full h-full overflow-hidden hover:scale-[1.03] transition-all hover:-translate-y-2.5 duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] [clip-path:polygon(0_0,calc(100%-20px)_0,100%_20px,100%_100%,20px_100%,0_calc(100%-20px))]">
                   <div className="relative w-full h-[220px] md:h-60 lg:h-[260px] 2xl:h-80 xl:h-[280px] overflow-hidden shrink-0">
-                    <img
+                    <Image
                       src={card.smallimage}
                       alt={card.desc}
                       className="w-full h-full object-cover group-hover:scale-[1.15] transition-transform duration-500"
+                      width={400}
+                      height={280}
                       loading="lazy"
+                      unoptimized
                     />
                     <div className="right-0 bottom-0 left-0 z-10 absolute bg-linear-to-t from-black/90 to-transparent h-1/2"></div>
                   </div>

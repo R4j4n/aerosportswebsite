@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
@@ -15,7 +15,7 @@ const PhotoGallery = ({ galleryData, navbarName = "gallery" }) => {
   const hideControlsTimeoutRef = useRef(null);
 
   // Get the groups for the specified navbar
-  const groups = galleryData[navbarName] || [];
+  const groups = useMemo(() => galleryData[navbarName] || [], [galleryData, navbarName]);
 
   // Helper function to detect if URL is a video
   const isVideo = (url) => {
@@ -32,22 +32,22 @@ const PhotoGallery = ({ galleryData, navbarName = "gallery" }) => {
   };
 
   // Navigate to next media
-  const nextMedia = (e) => {
+  const nextMedia = useCallback((e) => {
     if (e) e.stopPropagation();
     if (currentGroup !== null && groups[currentGroup]) {
       const totalMedia = groups[currentGroup].urls.length;
       setCurrentMediaIndex((prev) => (prev + 1) % totalMedia);
     }
-  };
+  }, [currentGroup, groups]);
 
   // Navigate to previous media
-  const prevMedia = (e) => {
+  const prevMedia = useCallback((e) => {
     if (e) e.stopPropagation();
     if (currentGroup !== null && groups[currentGroup]) {
       const totalMedia = groups[currentGroup].urls.length;
       setCurrentMediaIndex((prev) => (prev - 1 + totalMedia) % totalMedia);
     }
-  };
+  }, [currentGroup, groups]);
 
   // Handle mouse movement to show/hide controls
   const handleMouseMove = () => {
@@ -86,18 +86,18 @@ const PhotoGallery = ({ galleryData, navbarName = "gallery" }) => {
   };
 
   // Handle keyboard navigation
-  const handleKeyDown = (e) => {
-    if (e.key === "ArrowRight") nextMedia();
-    if (e.key === "ArrowLeft") prevMedia();
-    if (e.key === "Escape") setIsModalOpen(false);
-  };
-
   useEffect(() => {
-    if (isModalOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
-    }
-  }, [isModalOpen, currentGroup, currentMediaIndex]);
+    if (!isModalOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") nextMedia();
+      if (e.key === "ArrowLeft") prevMedia();
+      if (e.key === "Escape") setIsModalOpen(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isModalOpen, nextMedia, prevMedia]);
 
   if (!groups || groups.length === 0) {
     return (
@@ -169,10 +169,13 @@ const PhotoGallery = ({ galleryData, navbarName = "gallery" }) => {
                   key={currentMediaIndex}
                 />
               ) : (
-                <img
+                <Image
                   src={groups[currentGroup].urls[currentMediaIndex]}
                   alt={groups[currentGroup].group || "Gallery image"}
                   className="gallery-media-full"
+                  width={1200}
+                  height={900}
+                  unoptimized
                 />
               )}
             </div>

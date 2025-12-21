@@ -24,6 +24,7 @@ export const useScrollAnimation = (options = {}) => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -38,13 +39,13 @@ export const useScrollAnimation = (options = {}) => {
       { threshold }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [threshold, once, hasAnimated]);
@@ -80,6 +81,7 @@ export const useStaggerAnimation = (itemCount, options = {}) => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    const element = containerRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -99,13 +101,13 @@ export const useStaggerAnimation = (itemCount, options = {}) => {
       { threshold }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [itemCount, threshold, once, hasAnimated]);
@@ -142,6 +144,7 @@ export const useCountUpAnimation = (end, options = {}) => {
   const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasStarted) {
@@ -151,13 +154,13 @@ export const useCountUpAnimation = (end, options = {}) => {
       { threshold }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [threshold, hasStarted]);
@@ -241,6 +244,7 @@ export const useScrollParallax = (options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -248,13 +252,13 @@ export const useScrollParallax = (options = {}) => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);
