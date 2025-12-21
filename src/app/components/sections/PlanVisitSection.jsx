@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const PlanVisitSection = ({ seosection, locationSlug }) => {
+const PlanVisitSection = ({ seosection, locationSlug, estoreConfig }) => {
 	if (!seosection) return null;
 
 	return (
@@ -31,11 +31,13 @@ const PlanVisitSection = ({ seosection, locationSlug }) => {
 						<Button variant="accent" size="md" asChild>
 							<Link href={`/${locationSlug}/pricing-promos`}>View Pricing & Promos</Link>
 						</Button>
-						<Button variant="accentOutline" size="md" asChild>
-							<a href="https://ecom.roller.app/aerosportsoakvillemississauga/products/en/home">
-								Buy Your Tickets
-							</a>
-						</Button>
+						{estoreConfig?.value && (
+							<Button variant="accentOutline" size="md" asChild>
+								<a href={estoreConfig.value} target="_blank">
+									Buy Your Tickets
+								</a>
+							</Button>
+						)}
 					</div>
 				</div>
 			</div>

@@ -7,10 +7,26 @@ import MenuButton from "./smallComponents/MenuButton";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 
 const Header = ({ location_slug, menudata, configdata, pricingData }) => {
+  // Define custom order for navigation items
+  const navOrder = ['Attractions', 'Birthday Parties', 'Groups & Events', 'Programs', 'Support SickKids', 'Pricing & Promos', 'About Us'];
+
   const navList = (Array.isArray(menudata) ? menudata : [])
     .filter((item) => item.isactive === 1)
     .map((item) => ({ navName: item.desc, navUrl: item.path.toLowerCase() }))
-    .sort((a, b) => a.navName.localeCompare(b.navName));
+    .sort((a, b) => {
+      const indexA = navOrder.indexOf(a.navName);
+      const indexB = navOrder.indexOf(b.navName);
+
+      // If both items are in the custom order, sort by their position
+      if (indexA !== -1 && indexB !== -1) {
+        return indexA - indexB;
+      }
+      // If only one item is in the custom order, it comes first
+      if (indexA !== -1) return -1;
+      if (indexB !== -1) return 1;
+      // If neither is in the custom order, sort alphabetically
+      return a.navName.localeCompare(b.navName);
+    });
 
   const estoreConfig = Array.isArray(configdata)
     ? configdata.find((item) => item.key === "estorebase")

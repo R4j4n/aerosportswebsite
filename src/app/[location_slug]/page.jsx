@@ -2,6 +2,7 @@ import "../styles/home.css";
 import "../styles/promotions.css";
 import { getDataByParentId } from "@/utils/customFunctions";
 import PromotionModal from "@/components/model/PromotionModal";
+import LocationPopupModal from "@/components/model/LocationPopupModal";
 import ExploreAttractionsSection from "@/components/sections/ExploreAttractionsSection";
 import HeroSection from "@/components/sections/HeroSection";
 import SEOSection from "@/components/sections/SEOSection";
@@ -26,13 +27,14 @@ export async function generateMetadata({ params }) {
 
 const Home = async ({ params }) => {
   const location_slug = params?.location_slug;
-  const [data, dataconfig, promotions, locationData, waiverLink] =
+  const [data, dataconfig, promotions, locationData, waiverLink, popupData] =
     await Promise.all([
       fetchMenuData(location_slug),
       fetchsheetdata("config", location_slug),
       fetchsheetdata("promotions", location_slug),
       fetchsheetdata("locations", location_slug),
       getWaiverLink(location_slug),
+      fetchsheetdata("popups", location_slug),
     ]);
 
   const promotionPopup = Array.isArray(dataconfig)
@@ -62,6 +64,9 @@ const Home = async ({ params }) => {
       {/* {promotionPopup.length > 0 && (
         <PromotionModal promotionPopup={promotionPopup} />
       )} */}
+
+      {/* Location Popup - Renders HTML from Google Sheets 'popups' workbook */}
+      <LocationPopupModal popupData={popupData} />
 
       {/* Hero Section - Full Width with Clean, Energetic Design */}
       <HeroSection
@@ -97,7 +102,7 @@ const Home = async ({ params }) => {
 
       {/* Plan Your Visit Section - Bottom CTA Section */}
       {attractionsData?.[0]?.children?.length > 0 && seosection && (
-        <PlanVisitSection seosection={seosection} locationSlug={location_slug} />
+        <PlanVisitSection seosection={seosection} locationSlug={location_slug} estoreConfig={estoreConfig} />
       )}
 
       {/* Statistics Section - Centered Container

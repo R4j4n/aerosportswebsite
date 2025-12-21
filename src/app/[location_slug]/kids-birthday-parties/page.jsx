@@ -5,6 +5,8 @@ import BirthdayPartySection from "@/components/sections/BirthdayPartySection";
 import { fetchsheetdata, fetchPageData, generateMetadataLib, fetchMenuData, getWaiverLink, generateSchema, fetchBirthdayPartyJson } from "@/lib/sheets";
 import MotionImage from "@/components/MotionImage";
 import TermsModal from "@/components/TermsModal";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 export async function generateMetadata({ params }) {
 	const metadata = await generateMetadataLib({
 		location: params.location_slug,
@@ -226,6 +228,17 @@ const Page = async ({ params }) => {
 							<p className="font-semibold text-neon-green text-lg leading-relaxed">{locData.address}</p>
 						</div>
 					</div>
+
+					{/* Birthday Invitation Button */}
+					{locData.birthdaypartyurl && (
+						<div className="flex justify-center mt-12">
+							<Button variant="primary" size="lg" asChild>
+								<a href={locData.birthdaypartyurl} target="_blank">
+									Generate Your Custom Birthday Invitation
+								</a>
+							</Button>
+						</div>
+					)}
 				</div>
 			</section>
 			  <script
